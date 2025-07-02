@@ -1,0 +1,268 @@
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: url("../../medios/banner pagina_page-0007.jpg") no-repeat center center/cover;
+        font-family: "Montserrat", sans-serif !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Capa oscura */
+    body::before {
+        font-family: "Montserrat", sans-serif !important;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+
+    form {
+        font-family: "Montserrat", sans-serif !important;
+        position: relative;
+        z-index: 1;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 30px 24px;
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: slideUp 0.8s ease-out;
+        transform: translateY(0);
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    @media (max-height: 500px) {
+        form {
+            padding: 25px 20px;
+            gap: 10px;
+        }
+
+        .logo-titulo span {
+            font-size: 28px;
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+
+        .subtitulo-logo {
+            font-size: 10px;
+        }
+    }
+
+    form:hover {
+        font-family: "Montserrat", sans-serif !important;
+        transform: translateY(-4px);
+        box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes slideUp {
+        from {
+            font-family: "Montserrat", sans-serif !important;
+            opacity: 0;
+            transform: translateY(40px);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        to {
+            font-family: "Montserrat", sans-serif !important;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .logo-titulo {
+        font-family: 'Jost', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 6px;
+    }
+
+    .logo-titulo img {
+        width: 42px;
+    }
+
+    .logo-titulo span {
+        font-size: 35px;
+        font-weight: 600;
+        color: #370494;
+    }
+
+    h1 {
+        font-family: "Montserrat", sans-serif !important;
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 16px;
+        color: #222;
+    }
+
+    fieldset {
+        font-family: "Montserrat", sans-serif !important;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px;
+    }
+
+    label {
+        font-family: "Montserrat", sans-serif !important;
+        margin-bottom: 6px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    input {
+        font-family: "Montserrat", sans-serif !important;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        transition: border 0.3s, box-shadow 0.3s;
+        height: 40px;
+    }
+
+    input:focus {
+        font-family: "Montserrat", sans-serif !important;
+        outline: none;
+        border: 1px solid #370494;
+        box-shadow: 0 0 5px rgba(55, 4, 148, 0.5);
+    }
+
+    button {
+        font-family: "Montserrat", sans-serif !important;
+        background-color: #370494;
+        color: white;
+        border: none;
+        border-radius: 4px !important;
+        padding: 6px 16px;
+        font-size: 13px !important;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        float: right;
+        margin-top: 6px;
+    }
+
+    button:hover {
+        font-family: "Montserrat", sans-serif !important;
+        background-color: #2d0378;
+        transform: translateY(-1px);
+    }
+
+    .input-wrap {
+        font-family: "Montserrat", sans-serif !important;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .input-wrap input {
+        font-family: "Montserrat", sans-serif !important;
+        width: 100%;
+        padding: 9px 10px;
+        height: 36px;
+        font-size: 13px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        background: #fff;
+        color: #222;
+    }
+
+    .input-wrap input:focus {
+        font-family: "Montserrat", sans-serif !important;
+        border-color: #370494;
+        animation: pop 0.25s ease;
+    }
+
+    .input-wrap label {
+        font-family: "Montserrat", sans-serif !important;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 0 4px;
+        font-size: 13px;
+        color: #666;
+        transition: 0.2s ease all;
+        pointer-events: none;
+    }
+
+    .input-wrap input:focus+label,
+    .input-wrap input:not(:placeholder-shown)+label {
+        font-family: "Montserrat", sans-serif !important;
+        top: -8px;
+        font-size: 11px;
+        color: #370494;
+    }
+
+    body.dark-mode .input-wrap label {
+        color: #370494 !important;
+    }
+
+    body.dark-mode .input-wrap input {
+        background-color: #e7e6e6 !important;
+        color: #370494 !important;
+    }
+
+    @keyframes pop {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.03);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes shake {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        20%,
+        60% {
+            transform: translateX(-6px);
+        }
+
+        40%,
+        80% {
+            transform: translateX(6px);
+        }
+    }
+
+    .shake {
+        animation: shake 0.4s;
+        border-color: red !important;
+    }
+
+    .logo-titulo-completo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 14px;
+        margin-top: -20px;
+    }
+
+    .subtitulo-logo {
+        font-size: 11px;
+        color: #444;
+        margin-top: -4px;
+    }

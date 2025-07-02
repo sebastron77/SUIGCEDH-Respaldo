@@ -49,7 +49,7 @@ if (isset($_POST['edit_evento'])) {
         $type = $_FILES['invitacion']['type'];
         $temp = $_FILES['invitacion']['tmp_name'];
 
-        //Verificamos que exista la carpeta y si sí, guardamos el pdf
+        //Verificamos que exista la carpeta y si sí, guardamos el pdf.
         if (is_dir($carpeta)) {
             $move =  move_uploaded_file($temp, $carpeta . "/" . $name);
         } else {

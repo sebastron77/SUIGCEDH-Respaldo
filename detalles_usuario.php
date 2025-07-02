@@ -115,7 +115,7 @@ if (isset($_POST["export_data"])) {
           <thead class="thead-purple">
             <tr style="height: 10px;"">
               <th class=" text-center" style=" width: 1%;">#</th>
-              <th class="text-center" style="width: 1%;">No.Empledo</th>
+              <!-- <th class="text-center" style="width: 1%;">No.Empledo</th> -->
               <th class="text-center" style="width: 5%;">Nombre(s)</th>
               <th class="text-center" style="width: 5%;">Apellidos</th>
               <th class="text-center" style="width: 10%;">Puesto</th>
@@ -131,7 +131,7 @@ if (isset($_POST["export_data"])) {
             <?php foreach ($all_detalles as $a_detalle) : ?>
               <tr>
                 <td class="text-center"><?php echo count_id(); ?></td>
-                <td class="text-center"><?php echo remove_junk(ucwords($a_detalle['no_empleado'])) ?></td>
+                <!-- <td class="text-center"><?php echo remove_junk(ucwords($a_detalle['no_empleado'])) ?></td> -->
                 <td><?php echo remove_junk(ucwords($a_detalle['nombre'])) ?></td>
                 <td><?php echo remove_junk(ucwords($a_detalle['apellidos'])) ?></td>
                 <td><?php echo remove_junk(ucwords($a_detalle['puesto'])) ?></td>
@@ -165,23 +165,23 @@ if (isset($_POST["export_data"])) {
                         <span class="material-symbols-rounded" style="font-size: 23px; color: white; margin-top: 5px;">school</span>
                       </a>&nbsp;
                       <a href="exp_laboral.php?id=<?php echo (int)$a_detalle['detalleID']; ?>" class="btn btn-danger btn-md" style=" background: #5347da; border-color:#5347da; height: 40px" title="Expediente Laboral" data-toggle="tooltip">
-                        <span class="material-symbols-rounded" style="font-size: 20px; color: white; margin-top: 5px;">work</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px !important; color: white; margin-top: 5px;">work</span>
                       </a>&nbsp;
                       <a href="licencias.php?id=<?php echo (int)$a_detalle['detalleID']; ?>" class="btn btn-danger btn-md" style=" background: #e44cd5; border-color:#e44cd5; height: 40px" title="Licencias" data-toggle="tooltip">
-                        <span class="material-symbols-rounded" style="font-size: 20px; color: white; margin-top: 5px;">calendar_clock</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px !important; color: white; margin-top: 5px;">calendar_clock</span>
                       </a>&nbsp;
                       <a href="vacaciones.php?id=<?php echo (int)$a_detalle['detalleID']; ?>" class="btn btn-danger btn-md" style=" background: #229df0; border-color:#229df0; height: 40px" title="Vacaciones" data-toggle="tooltip">
-                        <span class="material-symbols-rounded" style="font-size: 20px; color: white; margin-top: 5px;">beach_access</span>
+                        <span class="material-symbols-rounded" style="font-size: 20px !important; color: white; margin-top: 5px;">beach_access</span>
                       </a>&nbsp;
                         <?php endif; ?>
                       <?php if (($nivel_user   == 1) || ($nivel_user == 14)  || $nivel_user == 29) : ?>
                         <?php if ($a_detalle['estatus_detalle'] == 0) : ?>
                           <a href="activate_detalle_usuario.php?id=<?php echo (int)$a_detalle['detalleID']; ?>" class="btn btn-success btn-md" title="Activar" data-toggle="tooltip" style="height: 40px">
-                            <span class="material-symbols-rounded" style="font-size: 20px; color: white; margin-top: 5px;">check</span>
+                            <span class="material-symbols-rounded" style="font-size: 20px !important; color: white; margin-top: 5px;">check</span>
                           </a>&nbsp;
                         <?php else : ?>
                           <a href="inactivate_detalle_usuario.php?id=<?php echo (int)$a_detalle['detalleID']; ?>" class="btn btn-danger btn-md" title="Inactivar" data-toggle="tooltip" style="height: 40px">
-                            <span class="material-symbols-rounded" style="font-size: 20px; color: white; margin-top: 5px;">block</span>
+                            <span class="material-symbols-rounded" style="font-size: 20px !important; color: white; margin-top: 5px;">block</span>
                           </a>&nbsp;
                         <?php endif; ?>
                       <?php endif; ?>

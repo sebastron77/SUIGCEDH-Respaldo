@@ -7,12 +7,6 @@ $user = current_user();
 $id_user = $user['id_user'];
 $nivel_user = $user['user_level'];
 
-$ver_info = find_by_id_inmueble((int)$_GET['id']);
-
-$folio_carpeta = str_replace("/", "-", $ver_info['folio']);
-$carpeta = 'uploads/inmuebles/' . $folio_carpeta;
-
-$fecha_compra = date("d/m/Y", strtotime($ver_info['fecha_adquisicion']));
 
 if ($nivel_user == 1) {
     page_require_level_exacto(1);
@@ -41,6 +35,15 @@ if ($nivel_user > 29) {
 if (!$nivel_user) {
     redirect('home.php');
 }
+
+$ver_info = find_by_id_inmueble((int)$_GET['id']);
+
+$folio_carpeta = str_replace("/", "-", $ver_info['folio']);
+$carpeta = 'uploads/inmuebles/' . $folio_carpeta;
+
+$fecha_compra = date("d/m/Y", strtotime($ver_info['fecha_adquisicion']));
+$expediente = find_all_by('rel_expedientes_inmuebles', (int)$_GET['id'], 'id_bien_inmueble');
+$licencias_funcionamiento = find_all_by('rel_licencias_funcionamiento', (int)$_GET['id'], 'id_bien_inmueble');
 ?>
 <?php include_once('layouts/header.php'); ?>
 
@@ -111,6 +114,57 @@ if (!$nivel_user) {
                             <td class="text-center"><?php echo $ver_info['localidad']; ?></td>
                             <td class="text-center"><?php echo $ver_info['observaciones']; ?></td>
                         </tr>
+                    </tbody>
+                </table>
+
+                <span style="display: inline-flex; align-items: center; font-size: 18px; font-weight: bold;">
+                    <span class="material-symbols-outlined" style="margin-right: 5px; font-size: 30px;">
+                        dashboard
+                    </span>
+                    Expediente
+                </span>
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-purple">
+                        <tr style="height: 10px;">
+                            <th class="text-center" style="width: 10%;">Nombre del Documento</th>
+                            <th class="text-center" style="width: 10%;">Documento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($expediente ?? [] as $doc_exp) :
+                            $carpeta = 'uploads/inmuebles/' . $folio_carpeta;
+                            // $carpeta2 = 'uploads/inmuebles/' . $folio_carpeta . '/' . $doc_exp['anio'];
+                        ?>
+                            <tr>
+                                <td class="text-center"><?php echo $doc_exp['nombre_documento']; ?></td>
+                                <td class="text-center">
+                                    <a target="_blank" href="<?php echo $carpeta ?>/<?php echo $doc_exp['documento'] ?>">
+                                        <?php echo $doc_exp['documento'] ?>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <?php foreach ($licencias_funcionamiento ?? [] as $func) :
+                            // $carpeta = 'uploads/inmuebles/' . $folio_carpeta;
+                            $carpeta2 = 'uploads/inmuebles/' . $folio_carpeta . '/' . $func['ejercicio'];
+                        ?>
+                            <tr>
+                                <td class="text-center"><?php echo 'Comprobante de pago - Licencia de Funcionamiento ' . $func['ejercicio']; ?></td>
+                                <td class="text-center">
+                                    <a target="_blank" href="<?php echo $carpeta2 ?>/<?php echo $func['comprobante_pago'] ?>">
+                                        <?php echo $func['comprobante_pago'] ?>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><?php echo 'Documento de licencia - Licencia de Funcionamiento ' . $func['ejercicio']; ?></td>
+                                <td class="text-center">
+                                    <a target="_blank" href="<?php echo $carpeta2 ?>/<?php echo $func['documento_licencia'] ?>">
+                                        <?php echo $func['documento_licencia'] ?>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
                 <a href="bienes_inmuebles.php" class="btn btn-md btn-success" data-toggle="tooltip" title="Regresar">

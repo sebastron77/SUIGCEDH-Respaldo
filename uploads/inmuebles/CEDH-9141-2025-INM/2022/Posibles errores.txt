@@ -1,0 +1,3 @@
+Posibles errores
+- Cuando un módulo no cargue y se quede en blanco, hay que revisar la BD a la que se conecta el exportar el Excel.
+- Cuando una query no arroje nada, pero si haya registros, hay que checar las llaves foráneas.

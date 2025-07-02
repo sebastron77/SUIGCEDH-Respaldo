@@ -54,7 +54,7 @@ $all_inmuebles = find_all_inmuebles();
                     <span class="glyphicon glyphicon-th"></span>
                     <span>Lista de Inmuebles</span>
                 </strong>
-                <?php if (($nivel_user <= 2) || ($nivel_user == 6)) : ?>
+                <?php if ($nivel_user <= 2 || $nivel_user == 28) : ?>
                     <a href="add_bien_inmueble.php" class="btn btn-info pull-right">Agregar Inmueble</a>
                 <?php endif; ?>
             </div>
@@ -67,8 +67,9 @@ $all_inmuebles = find_all_inmuebles();
                             <th class="text-center" style="width: 7%;">Denominación</th>
                             <th class="text-center" style="width: 7%;">Municipio</th>
                             <th class="text-center" style="width: 7%;">Tipo Inmueble</th>
-                            <th class="text-center" style="width: 7%;">Área Responsable</th>
-                            <?php if ($nivel_user == 1 || $nivel_user == 14) : ?>
+                            <th class="text-center" style="width: 7%;">Origen Propiedad</th>
+                            <th class="text-center" style="width: 15%;">Área Responsable</th>
+                            <?php if ($nivel_user == 1 || $nivel_user == 28) : ?>
                                 <th style="width: 1%;" class="text-center">Acciones</th>
                             <?php endif; ?>
                         </tr>
@@ -78,19 +79,22 @@ $all_inmuebles = find_all_inmuebles();
                             <tr>
                                 <td class="text-center"><?php echo count_id(); ?></td>
                                 <td class="text-center">
-                                    <?php echo remove_junk(ucwords($a_inmueble['denominacion'])) ?>
+                                    <?php echo ucwords($a_inmueble['denominacion']) ?>
                                 </td>
                                 <td class="text-center">
-                                    <?php echo remove_junk(ucwords($a_inmueble['municipio'])) ?>
+                                    <?php echo ucwords($a_inmueble['municipio']) ?>
                                 </td>
                                 <td class="text-center">
-                                    <?php echo remove_junk(ucwords($a_inmueble['tipo_inmueble'])) ?>
+                                    <?php echo ucwords($a_inmueble['tipo_inmueble']) ?>
                                 </td>
                                 <td class="text-center">
-                                    <?php echo remove_junk(ucwords($a_inmueble['area_responsable'])) ?>
+                                    <?php echo ucwords($a_inmueble['origen_propiedad']) ?>
                                 </td>
                                 <td class="text-center">
-                                    <?php if ($nivel_user == 1 || $nivel_user == 14) : ?>
+                                    <?php echo ucwords($a_inmueble['area_responsable']) ?>
+                                </td>
+                                <td class="text-center">
+                                    <?php if ($nivel_user == 1 || $nivel_user == 28) : ?>
                                         <div class="btn-group">
                                             <a href="ver_info_inmueble.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-info" data-toggle="tooltip" title="Ver información">
                                                 <span class="material-symbols-outlined" style="font-size: 22px; color: white; margin-top: 8px;">
@@ -102,9 +106,14 @@ $all_inmuebles = find_all_inmuebles();
                                                     edit
                                                 </span>
                                             </a>
-                                            <a href="licencias_financiamiento.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Reparaciones" style="background-color: #ff4574; border-color: #ff4574">
+                                            <a href="licencias_funcionamiento.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Licencias" style="background-color: #ff4574; border-color: #ff4574">
                                                 <span class="material-symbols-outlined" style="font-size: 22px; color: white; margin-top: 8px;">
                                                     build
+                                                </span>
+                                            </a>
+                                            <a href="expediente_inmuebles.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Expediente" style="background-color:#3096e9; border-color: #3096e9">
+                                                <span class="material-symbols-outlined" style="font-size: 22px; color: white; margin-top: 8px;">
+                                                    home_storage
                                                 </span>
                                             </a>
                                         </div>

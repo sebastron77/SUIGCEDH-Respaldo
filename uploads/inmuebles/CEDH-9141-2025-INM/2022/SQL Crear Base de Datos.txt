@@ -1,0 +1,10 @@
+-- Crear base de datos con formato para que acepte comillas y acentos
+CREATE DATABASE nombre_de_tu_base CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+-- Para desactivar las llaves foráneas y no de error al crear la base de datos
+SET foreign_key_checks = 0;
+// Código de la base de datos
+SET foreign_key_checks = 1;
+
+-- Comando para importar la base de datos con el tipo de formato requerido
+mysql --default-character-set=utf8mb4 -u root -p suigcedh < "C:\Users\Sebastian\Desktop\suigcedh (11).sql"

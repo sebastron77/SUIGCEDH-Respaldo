@@ -8207,7 +8207,7 @@ function last_sesion_minuta()
 function find_all_inmuebles()
 {
   return find_by_sql("SELECT i.id_bien_inmueble, di.descripcion as denominacion, m.descripcion as municipio, ti.descripcion as tipo_inmueble, 
-                      ar.nombre_area as area_responsable
+                      op.descripcion as origen_propiedad, ar.nombre_area as area_responsable
                       FROM bienes_inmuebles as i
                       LEFT JOIN cat_denom_inmueble as di
                       ON i.id_cat_denom_inmueble = di.id_cat_denom_inmueble
@@ -8215,6 +8215,8 @@ function find_all_inmuebles()
                       ON i.id_cat_mun = m.id_cat_mun
                       LEFT JOIN cat_tipo_inmueble as ti
                       ON i.id_cat_tipo_inmueble = ti.id_cat_tipo_inmueble
+                      LEFT JOIN cat_origen_propiedad as op
+                      ON i.id_cat_origen_propiedad = op.id_cat_origen_propiedad
                       LEFT JOIN area as ar
                       ON i.id_area = ar.id_area");
 }
@@ -8243,4 +8245,27 @@ function find_by_id_inmueble($id)
     return $result;
   else
     return null;
+}
+/*------------------------------------------------------------------------*/
+/* Funcion para el total de trabajadoresa activos en la cedh */
+/*------------------------------------------------------------------------*/
+function count_by_trabajadores()
+{
+  global $db;
+  
+    $sql    = "SELECT COUNT(id_det_usuario) AS total FROM `detalles_usuario` a WHERE estatus_detalle=1;";
+    $result = $db->query($sql);
+    return ($db->fetch_assoc($result));
+  
+}
+/*------------------------------------------------------------------------*/
+/* Funcion para contar las solicitudes de informacion*/
+/*------------------------------------------------------------------------*/
+function count_by_anioSol($year)
+{
+  global $db;
+	$year= substr($year, -2);
+    $sql    = "SELECT COUNT(id_solicitudes_informacion) AS total FROM solicitudes_informacion WHERE folio_solicitud LIKE '1603528{$year}%'";;
+    $result = $db->query($sql);
+    return ($db->fetch_assoc($result));
 }

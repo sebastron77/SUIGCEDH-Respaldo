@@ -27,7 +27,7 @@ endif;
 <style>
   :root {
     --background: #FFFFFF;
-    --card-bg: linear-gradient(90deg, rgba(18,0,50,1) 0%, rgba(46,4,124,1) 50%, rgb(62, 1, 175) 100%);
+    --card-bg:rgb(36, 0, 99);
     --border: #FFFFFF;
     --text: #FFFFFF;
     --text-dark: #FFFFFF;

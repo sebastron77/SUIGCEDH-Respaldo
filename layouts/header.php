@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
   <link rel="stylesheet" href="libs/css/main.css" />
-  <link rel="stylesheet" href="libs/css/organigrama.css" />
+  <!-- <link rel="stylesheet" href="libs/css/organigrama.css" /> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -280,6 +280,14 @@
               </ul>
             </li>
           </ul>
+          <div class="modo-oscuro-wrapper">
+            <label class="modo-oscuro-toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <span class="slider">
+                <span class="icon material-symbols-rounded">light_mode</span>
+              </span>
+            </label>
+          </div>
         </div>
       </div>
     </header>
@@ -406,3 +414,31 @@
 
   <div class="page">
     <div class="container-fluid">
+      <script>
+        const toggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const icon = document.querySelector('.modo-oscuro-toggle .icon');
+
+        function actualizarIcono() {
+          icon.textContent = toggle.checked ? 'dark_mode' : 'light_mode';
+        }
+
+        // Estado al cargar
+        if (localStorage.getItem('darkMode') === 'enabled') {
+          body.classList.add('dark-mode');
+          toggle.checked = true;
+          actualizarIcono();
+        }
+
+        toggle.addEventListener('change', () => {
+          if (toggle.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+          } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+          }
+          actualizarIcono();
+        });
+      </script>
+      
