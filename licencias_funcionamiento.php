@@ -170,7 +170,7 @@ if (isset($_POST['licencias_funcionamiento'])) {
                     <th class="text-center" style="width: 5%; font-size: 14px;">Ejercicio</th>
                     <th class="text-center" style="width: 30%; font-size: 14px;">Tipo Licencia</th>
                     <th class="text-center" style="width: 30%; font-size: 14px;">No. Licencia</th>
-                    <th class="text-center" style="width: 10%; font-size: 14px;">Acciones</th>
+                    <th class="text-center" style="width: 12%; font-size: 14px;">Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -188,12 +188,12 @@ if (isset($_POST['licencias_funcionamiento'])) {
                                     visibility
                                 </span>
                             </a>
-                            <a href="edit_licencias_funcionamiento.php?id=<?php echo (int)$detalle['id_rel_licencias_funcionamiento']; ?>&idbi=<?php echo $id_inmueble; ?>" class="btn btn-warning btn-md" title="Editar" data-toggle="tooltip" style="height: 30px; width: 30px;">
-                                <span class="material-symbols-rounded" style="font-size: 22px; color: black; margin-top: 1px; margin-left: -3px;">
+                            <a href="edit_licencias_funcionamiento.php?id=<?php echo (int)$detalle['id_rel_licencias_funcionamiento']; ?>&idbi=<?php echo $id_inmueble; ?>" class="btn btn-warning btn-md" title="Editar" data-toggle="tooltip" style="height: 28px; width: 28px;">
+                                <span class="material-symbols-rounded" style="font-size: 22px; color: black; margin-top: -2px; margin-left: -5px;">
                                     edit
                                 </span>
                             </a>
-                            <a href="delete_licencias_funcionamiento.php?id=<?php echo (int)$detalle['id_rel_licencias_funcionamiento']; ?>&idbi=<?php echo $id_inmueble; ?>&anio=<?php echo $detalle['ejercicio'] ?>" class=" btn btn-dark btn-md" title="Eliminar" data-toggle="tooltip" style="height: 30px; width: 30px;"><span class="material-symbols-rounded" style="font-size: 22px; color: white; margin-top: -1.5px; margin-left: -5px;">delete</span>
+                            <a href="delete_licencias_funcionamiento.php?id=<?php echo (int)$detalle['id_rel_licencias_funcionamiento']; ?>&idbi=<?php echo $id_inmueble; ?>&anio=<?php echo $detalle['ejercicio'] ?>" class=" btn btn-dark btn-md" title="Eliminar" data-toggle="tooltip" style="height: 31px; width: 31px;"><span class="material-symbols-rounded" style="font-size: 22px; color: white; margin-top: -1.5px; margin-left: -5px;">delete</span>
                             </a>
                         </td>
                     </tr>

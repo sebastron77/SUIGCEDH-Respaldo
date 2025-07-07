@@ -604,7 +604,7 @@ function count_by_id($table, $nombre_id)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table);
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table);
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -616,7 +616,7 @@ function count_by_id_orientacion($table, $nombre_id, $year)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE tipo_solicitud = 1 AND folio LIKE '%/{$year}-%' ";
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE tipo_solicitud = 1 AND folio LIKE '%/{$year}-%' ";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -629,7 +629,7 @@ function count_by_id_canalizacion($table, $nombre_id, $year)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE tipo_solicitud = 2 AND folio LIKE '%/{$year}-%' ";
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE tipo_solicitud = 2 AND folio LIKE '%/{$year}-%' ";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1447,7 +1447,7 @@ function count_by_id_mujer($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '1' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '1' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1456,7 +1456,7 @@ function count_by_id_hombre($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '2' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '2' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1465,7 +1465,7 @@ function count_by_id_lgbt($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '3' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '3' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1474,7 +1474,7 @@ function count_by_id_lgbt2($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '3' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '3' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1485,7 +1485,7 @@ function count_by_comLg($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Comunidad LGBTIQ+' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Comunidad LGBTIQ+' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1494,7 +1494,7 @@ function count_by_comLg2($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Comunidad LGBT' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Comunidad LGBT' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1503,7 +1503,7 @@ function count_by_derMuj($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Derecho de las mujeres' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Derecho de las mujeres' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1512,7 +1512,7 @@ function count_by_nna($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Niñas, niños y adolescentes' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Niñas, niños y adolescentes' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1521,7 +1521,7 @@ function count_by_nna2($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Niños y adolescentes' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Niños y adolescentes' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1530,7 +1530,7 @@ function count_by_disc($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas con discapacidad' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas con discapacidad' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1539,7 +1539,7 @@ function count_by_mig($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas migrantes' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas migrantes' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1548,7 +1548,7 @@ function count_by_vih($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas que viven con VIH SIDA' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas que viven con VIH SIDA' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1557,7 +1557,7 @@ function count_by_gi($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Grupos indígenas' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Grupos indígenas' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1566,7 +1566,7 @@ function count_by_perio($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Periodistas' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Periodistas' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1575,7 +1575,7 @@ function count_by_ddh($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Defensores de los derechos humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Defensores de los derechos humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1584,7 +1584,7 @@ function count_by_am($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Adultos mayores' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Adultos mayores' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1593,7 +1593,7 @@ function count_by_int($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Internos' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Internos' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1602,7 +1602,7 @@ function count_by_otros($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Otros' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Otros' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1611,7 +1611,7 @@ function count_by_na($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'No Aplica' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'No Aplica' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1622,7 +1622,7 @@ function count_by_asesorv($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asesor Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asesor Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1631,7 +1631,7 @@ function count_by_asistentev($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asistente Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asistente Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1640,7 +1640,7 @@ function count_by_comp($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comparecencia' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comparecencia' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1649,7 +1649,7 @@ function count_by_escrito($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Escrito' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Escrito' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1658,7 +1658,7 @@ function count_by_vt($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía telefónica' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía telefónica' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1667,7 +1667,7 @@ function count_by_ve($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía electrónica' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía electrónica' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1676,7 +1676,7 @@ function count_by_cndh($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comisión Nacional de los Derechos Humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comisión Nacional de los Derechos Humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1689,7 +1689,7 @@ function count_by_id_mujerC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '1' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '1' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1698,7 +1698,7 @@ function count_by_id_hombreC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '2' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '2' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1707,7 +1707,7 @@ function count_by_id_lgbtC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '3' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(id_cat_gen) AS total FROM " . $db->escape($table) . " WHERE id_cat_gen = '3' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1718,7 +1718,7 @@ function count_by_comLgC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Comunidad LGBTIQ+' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Comunidad LGBTIQ+' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1727,7 +1727,7 @@ function count_by_derMujC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Derecho de las mujeres' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Derecho de las mujeres' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1736,7 +1736,7 @@ function count_by_nnaC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Niñas, niños y adolescentes' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Niñas, niños y adolescentes' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1745,7 +1745,7 @@ function count_by_discC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas con discapacidad' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas con discapacidad' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1754,7 +1754,7 @@ function count_by_migC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas migrantes' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas migrantes' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1763,7 +1763,7 @@ function count_by_vihC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas que viven con VIH SIDA' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Personas que viven con VIH SIDA' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1772,7 +1772,7 @@ function count_by_giC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Grupos indígenas' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Grupos indígenas' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1781,7 +1781,7 @@ function count_by_perioC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Periodistas' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Periodistas' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1790,7 +1790,7 @@ function count_by_ddhC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Defensores de los derechos humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Defensores de los derechos humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1799,7 +1799,7 @@ function count_by_amC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Adultos mayores' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Adultos mayores' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1808,7 +1808,7 @@ function count_by_intC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Internos' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Internos' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1817,7 +1817,7 @@ function count_by_otrosC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Otros' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'Otros' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1826,7 +1826,7 @@ function count_by_naC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'No Aplica' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(grupo_vulnerable) AS total FROM " . $db->escape($table) . " WHERE grupo_vulnerable = 'No Aplica' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1837,7 +1837,7 @@ function count_by_asesorvC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asesor Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asesor Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1846,7 +1846,7 @@ function count_by_asistentevC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asistente Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Asistente Virtual' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1855,7 +1855,7 @@ function count_by_compC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comparecencia' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comparecencia' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1864,7 +1864,7 @@ function count_by_escritoC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Escrito' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Escrito' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1873,7 +1873,7 @@ function count_by_vtC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía telefónica' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía telefónica' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1882,7 +1882,7 @@ function count_by_veC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía electrónica' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Vía electrónica' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1891,7 +1891,7 @@ function count_by_cndhC($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comisión Nacional de los Derechos Humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(medio_presentacion) AS total FROM " . $db->escape($table) . " WHERE medio_presentacion = 'Comisión Nacional de los Derechos Humanos' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1904,7 +1904,7 @@ function count_by_capacitacion($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Capacitación'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Capacitación'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1913,7 +1913,7 @@ function count_by_conferencia($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Conferencia'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Conferencia'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1922,7 +1922,7 @@ function count_by_curso($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Curso'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Curso'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1931,7 +1931,7 @@ function count_by_taller($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Taller'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Taller'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1940,7 +1940,7 @@ function count_by_platica($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Plática'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Plática'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1949,7 +1949,7 @@ function count_by_diplomado($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Diplomado'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Diplomado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1958,7 +1958,7 @@ function count_by_foro($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Foro'";
+    $sql = "SELECT COUNT(tipo_evento) AS total FROM " . $db->escape($table) . " WHERE tipo_evento = 'Foro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -1970,7 +1970,7 @@ function find_capacitacion_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Capacitación' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -1981,7 +1981,7 @@ function find_conferencia_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Conferencia' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -1992,7 +1992,7 @@ function find_curso_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Curso' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2003,7 +2003,7 @@ function find_taller_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Taller' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2014,7 +2014,7 @@ function find_platica_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Platica' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2025,7 +2025,7 @@ function find_diplomado_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Diplomado' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2036,7 +2036,7 @@ function find_foro_tipo_evento_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(tipo_evento) AS total FROM capacitaciones WHERE tipo_evento = 'Foro' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2048,7 +2048,7 @@ function count_by_presencial($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(modalidad) AS total FROM " . $db->escape($table) . " WHERE modalidad = 'Presencial'";
+    $sql = "SELECT COUNT(modalidad) AS total FROM " . $db->escape($table) . " WHERE modalidad = 'Presencial'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2057,7 +2057,7 @@ function count_by_en_linea($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(modalidad) AS total FROM " . $db->escape($table) . " WHERE modalidad = 'En línea'";
+    $sql = "SELECT COUNT(modalidad) AS total FROM " . $db->escape($table) . " WHERE modalidad = 'En línea'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2066,7 +2066,7 @@ function count_by_hibrido($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(modalidad) AS total FROM " . $db->escape($table) . " WHERE modalidad = 'Híbrido'";
+    $sql = "SELECT COUNT(modalidad) AS total FROM " . $db->escape($table) . " WHERE modalidad = 'Híbrido'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2077,7 +2077,7 @@ function find_presencial_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(modalidad) AS total FROM capacitaciones WHERE modalidad = 'Presencial' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2089,7 +2089,7 @@ function find_en_linea_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(modalidad) AS total FROM capacitaciones WHERE modalidad = 'En línea' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2101,7 +2101,7 @@ function find_hibrido_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(modalidad) AS total FROM capacitaciones WHERE modalidad = 'Híbrido' AND fecha BETWEEN '{$start_date}' AND '$end_date' GROUP BY DATE(fecha),id ORDER BY DATE(fecha) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2114,7 +2114,7 @@ function find_asesorV_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Asesor Virtual' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2125,7 +2125,7 @@ function find_asistenteV_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Asistente Virtual' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2136,7 +2136,7 @@ function find_comparecencia_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Comparecencia' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2147,7 +2147,7 @@ function find_escrito_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Escrito' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2158,7 +2158,7 @@ function find_vTelefonica_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Vía Telefónica' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2169,7 +2169,7 @@ function find_vElectronica_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Vía Electrónica' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2180,7 +2180,7 @@ function find_cndh_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Comisión Nacional de los Derechos Humanos' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2193,7 +2193,7 @@ function find_lgbt_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Comunidad LGBTIQ+' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2204,7 +2204,7 @@ function find_lgbt_by_dates2($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Comunidad LGBT' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2215,7 +2215,7 @@ function find_ddm_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Derecho de las mujeres' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2226,7 +2226,7 @@ function find_nna_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Niñas, niños y adolescentes' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2237,7 +2237,7 @@ function find_nna_by_dates2($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Niños y adolescentes' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2248,7 +2248,7 @@ function find_pDiscapacidad_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Personas con discapacidad' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2259,7 +2259,7 @@ function find_pMigrantes_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Personas migrantes' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2270,7 +2270,7 @@ function find_vih_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Personas que viven con VIH SIDA' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2281,7 +2281,7 @@ function find_gIndigenas_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Grupos indígenas' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2292,7 +2292,7 @@ function find_periodistas_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Periodistas' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2303,7 +2303,7 @@ function find_ddh_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Defensores de los Derechos Humanos' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2314,7 +2314,7 @@ function find_aMayores_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Adultos mayores' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2325,7 +2325,7 @@ function find_internos_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Internos' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2336,7 +2336,7 @@ function find_otros_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Otros' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2347,7 +2347,7 @@ function find_na_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'No aplica' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2360,7 +2360,7 @@ function find_hombre_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '2' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2371,7 +2371,7 @@ function find_mujer_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '1' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2382,7 +2382,7 @@ function find_lgbtiq_by_dates($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '3' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2393,7 +2393,7 @@ function find_lgbtiq_by_dates2($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '3' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 1 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2408,7 +2408,7 @@ function find_asesorV_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Asesor Virtual' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2419,7 +2419,7 @@ function find_asistenteV_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Asistente Virtual' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2430,7 +2430,7 @@ function find_comparecencia_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Comparecencia' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2441,7 +2441,7 @@ function find_escrito_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Escrito' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2452,7 +2452,7 @@ function find_vTelefonica_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Vía Telefónica' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2463,7 +2463,7 @@ function find_vElectronica_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Vía Electrónica' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2474,7 +2474,7 @@ function find_cndh_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(medio_presentacion) AS total FROM orientacion_canalizacion WHERE medio_presentacion = 'Comisión Nacional de los Derechos Humanos' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2487,7 +2487,7 @@ function find_lgbt_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Comunidad LGBTIQ+' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2498,7 +2498,7 @@ function find_lgbt_by_dates2C($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Comunidad LGBT' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2509,7 +2509,7 @@ function find_ddm_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Derecho de las mujeres' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2520,7 +2520,7 @@ function find_nna_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Niñas, niños y adolescentes' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2531,7 +2531,7 @@ function find_nna_by_dates2C($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Niños y adolescentes' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2542,7 +2542,7 @@ function find_pDiscapacidad_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Personas con discapacidad' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2553,7 +2553,7 @@ function find_pMigrantes_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Personas migrantes' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2564,7 +2564,7 @@ function find_vih_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Personas que viven con VIH SIDA' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2575,7 +2575,7 @@ function find_gIndigenas_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Grupos indígenas' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2586,7 +2586,7 @@ function find_periodistas_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Periodistas' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2597,7 +2597,7 @@ function find_ddh_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Defensores de los Derechos Humanos' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2608,7 +2608,7 @@ function find_aMayores_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Adultos mayores' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2619,7 +2619,7 @@ function find_internos_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Internos' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2630,7 +2630,7 @@ function find_otros_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'Otros' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2641,7 +2641,7 @@ function find_na_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(grupo_vulnerable) AS total FROM orientacion_canalizacion WHERE grupo_vulnerable = 'No aplica' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2654,7 +2654,7 @@ function find_hombre_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '2' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2665,7 +2665,7 @@ function find_mujer_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '1' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2676,7 +2676,7 @@ function find_lgbtiq_by_datesC($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '3' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2687,7 +2687,7 @@ function find_lgbtiq_by_dates2C($start_date, $end_date)
 {
   global $db;
   $start_date  = date("Y-m-d", strtotime($start_date));
-  $end_date    = date("Y-m-d", strtotime($end_date));
+  $end_date = date("Y-m-d", strtotime($end_date));
   $sql  = $db->query("SELECT SUM(total) as totales FROM (SELECT COUNT(id_cat_gen) AS total FROM orientacion_canalizacion WHERE id_cat_gen = '3' AND creacion BETWEEN '{$start_date}' AND '$end_date' AND tipo_solicitud = 2 GROUP BY DATE(creacion),id ORDER BY DATE(creacion) DESC) as total_final");
   if ($result = $db->fetch_assoc($sql))
     return $result;
@@ -2700,7 +2700,7 @@ function count_by_aeropuerto($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Aeropuerto de Morelia'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Aeropuerto de Morelia'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2709,7 +2709,7 @@ function count_by_cobaem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Colegio de Bachilleres del Estado de Michoacán COBAEM'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Colegio de Bachilleres del Estado de Michoacán COBAEM'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2718,7 +2718,7 @@ function count_by_cecytem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Colegio de Estudios Científicos y Tecnológicos del Estado de Michoacán CECYTEM'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Colegio de Estudios Científicos y Tecnológicos del Estado de Michoacán CECYTEM'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2727,7 +2727,7 @@ function count_by_conalep($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Colegio Nacional de Educación Profesional Técnica CONALEP'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Colegio Nacional de Educación Profesional Técnica CONALEP'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2736,7 +2736,7 @@ function count_by_cocotra($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Coordinadora del Transporte Publico en Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Coordinadora del Transporte Publico en Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2745,7 +2745,7 @@ function count_by_ceeav($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Ejecutiva Estatal de Atención a Victimas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Ejecutiva Estatal de Atención a Victimas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2754,7 +2754,7 @@ function count_by_cecufid($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Estatal de Cultura Física y Deporte'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Estatal de Cultura Física y Deporte'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2763,7 +2763,7 @@ function count_by_ceagc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Estatal del Agua y Gestión de Cuencas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Estatal del Agua y Gestión de Cuencas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2772,7 +2772,7 @@ function count_by_cfe($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Federal de Electricidad CFE'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Federal de Electricidad CFE'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2781,7 +2781,7 @@ function count_by_cndh4($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Nacional de los Derechos Humanos CNDH'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Nacional de los Derechos Humanos CNDH'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2790,7 +2790,7 @@ function count_by_conagua($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Nacional del Agua CONAGUA'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Nacional del Agua CONAGUA'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2799,7 +2799,7 @@ function count_by_condusef($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Nacional Para la Protección y Defensa de los Usuarios de Servicios Financieros CONDUSEF'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Nacional Para la Protección y Defensa de los Usuarios de Servicios Financieros CONDUSEF'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2808,7 +2808,7 @@ function count_by_corett($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Para la Regularización de la Tenencia de la Tierra CORETT'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Comisión Para la Regularización de la Tenencia de la Tierra CORETT'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2817,7 +2817,7 @@ function count_by_cjee($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Consejería Jurídica del Ejecutivo del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Consejería Jurídica del Ejecutivo del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2826,7 +2826,7 @@ function count_by_cnpd($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Consejo Nacional Para Prevenir la Discriminación'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Consejo Nacional Para Prevenir la Discriminación'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2835,7 +2835,7 @@ function count_by_ccs($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Coordinación de Comunicación Social'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Coordinación de Comunicación Social'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2844,7 +2844,7 @@ function count_by_cspem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Coordinación del Sistema Penitenciario del Estado de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Coordinación del Sistema Penitenciario del Estado de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2853,7 +2853,7 @@ function count_by_dpf($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Defensoría Publica Federal'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Defensoría Publica Federal'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2862,7 +2862,7 @@ function count_by_dcg($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Despacho del C Gobernador'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Despacho del C Gobernador'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2871,7 +2871,7 @@ function count_by_drc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección de Registro Civil'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección de Registro Civil'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2880,7 +2880,7 @@ function count_by_dtps($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección de Trabajo y Previsión Social'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección de Trabajo y Previsión Social'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2889,7 +2889,7 @@ function count_by_dgti($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección General de Educación Tecnológica Industrial DGTI'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección General de Educación Tecnológica Industrial DGTI'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2898,7 +2898,7 @@ function count_by_dgit($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección General de Institutos Tecnológicos'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Dirección General de Institutos Tecnológicos'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2907,7 +2907,7 @@ function count_by_fge($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Fiscalía General en el Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Fiscalía General en el Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2916,7 +2916,7 @@ function count_by_fgr($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Fiscalía General de la República'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Fiscalía General de la República'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2925,7 +2925,7 @@ function count_by_fovissste($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'FOVISSSTE Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'FOVISSSTE Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2934,7 +2934,7 @@ function count_by_hcem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Honorable Congreso del Estado de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Honorable Congreso del Estado de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2943,7 +2943,7 @@ function count_by_idpe($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de la Defensoría Publica del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de la Defensoría Publica del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2952,7 +2952,7 @@ function count_by_injuve($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de la Juventud Michoacana'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de la Juventud Michoacana'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2961,7 +2961,7 @@ function count_by_issste($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de Seguridad y Servicios Sociales de los Trabajadores al Servicio del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de Seguridad y Servicios Sociales de los Trabajadores al Servicio del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2970,7 +2970,7 @@ function count_by_ivem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de Vivienda de Michoacán IVEM'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto de Vivienda de Michoacán IVEM'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2979,7 +2979,7 @@ function count_by_infonavit($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto del Fondo Nacional de la Vivienda Para los Trabajadores INFONAVIT'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto del Fondo Nacional de la Vivienda Para los Trabajadores INFONAVIT'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2988,7 +2988,7 @@ function count_by_iem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Electoral de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Electoral de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -2997,7 +2997,7 @@ function count_by_imss($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Mexicano del Seguro Social IMSS'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Mexicano del Seguro Social IMSS'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3006,7 +3006,7 @@ function count_by_imced($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Michoacano de Ciencias de la Educación José María Morelos'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Michoacano de Ciencias de la Educación José María Morelos'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3015,7 +3015,7 @@ function count_by_inea($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Nacional de Educación Para los Adultos INEA'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Nacional de Educación Para los Adultos INEA'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3024,7 +3024,7 @@ function count_by_inm($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Nacional de Migración'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Instituto Nacional de Migración'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3033,7 +3033,7 @@ function count_by_japge($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Junta de Asistencia Privada del Gobierno del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Junta de Asistencia Privada del Gobierno del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3042,7 +3042,7 @@ function count_by_jcem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Junta de Caminos del Estado de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Junta de Caminos del Estado de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3051,7 +3051,7 @@ function count_by_jlca($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Junta Local de Conciliación y Arbitraje'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Junta Local de Conciliación y Arbitraje'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3060,7 +3060,7 @@ function count_by_zoo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Parque Zoológico Benito Juárez'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Parque Zoológico Benito Juárez'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3069,7 +3069,7 @@ function count_by_pce($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Pensiones Civiles del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Pensiones Civiles del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3078,7 +3078,7 @@ function count_by_pmacu($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Acuitzio'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Acuitzio'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3087,7 +3087,7 @@ function count_by_pmag($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Aguililla'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Aguililla'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3096,7 +3096,7 @@ function count_by_pmao($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Álvaro Obregón'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Álvaro Obregón'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3105,7 +3105,7 @@ function count_by_pmangama($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Angamacutiro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Angamacutiro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3114,7 +3114,7 @@ function count_by_pmangan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Angangueo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Angangueo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3123,7 +3123,7 @@ function count_by_pmapat($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Apatzingán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Apatzingán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3132,7 +3132,7 @@ function count_by_pmaquila($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Aquila'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Aquila'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3141,7 +3141,7 @@ function count_by_pmario($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ario'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ario'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3150,7 +3150,7 @@ function count_by_pmart($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Arteaga'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Arteaga'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3159,7 +3159,7 @@ function count_by_pmbris($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Briseñas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Briseñas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3168,7 +3168,7 @@ function count_by_pmbv($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Buenavista'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Buenavista'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3177,7 +3177,7 @@ function count_by_pmcarac($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Carácuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Carácuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3186,7 +3186,7 @@ function count_by_pmcharapan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Charapan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Charapan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3195,7 +3195,7 @@ function count_by_pmcharo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Charo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Charo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3204,7 +3204,7 @@ function count_by_pmchav($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Chavinda'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Chavinda'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3213,7 +3213,7 @@ function count_by_cheran($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Cheran'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Cheran'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3222,7 +3222,7 @@ function count_by_pmchil($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Chilchota'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Chilchota'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3231,7 +3231,7 @@ function count_by_pmchucan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Chucándiro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Chucándiro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3240,7 +3240,7 @@ function count_by_pmchuri($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Churintzio'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Churintzio'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3249,7 +3249,7 @@ function count_by_pmcoah($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Coahuayana'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Coahuayana'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3258,7 +3258,7 @@ function count_by_pmcoeneo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Coeneo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Coeneo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3267,7 +3267,7 @@ function count_by_pmcotija($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Cotija'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Cotija'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3276,7 +3276,7 @@ function count_by_pmcuitzeo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Cuitzeo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Cuitzeo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3285,7 +3285,7 @@ function count_by_pmecuan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ecuandureo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ecuandureo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3294,7 +3294,7 @@ function count_by_pmeh($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Epitacio Huerta'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Epitacio Huerta'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3303,7 +3303,7 @@ function count_by_pmeron($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Erongarícuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Erongarícuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3312,7 +3312,7 @@ function count_by_pmzamora($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Gabriel Zamora'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Gabriel Zamora'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3321,7 +3321,7 @@ function count_by_pmhidalgo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Hidalgo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Hidalgo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3330,7 +3330,7 @@ function count_by_pmhuanda($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huandacareo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huandacareo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3339,7 +3339,7 @@ function count_by_pmhuani($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huaniqueo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huaniqueo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3348,7 +3348,7 @@ function count_by_pmhuet($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huetamo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huetamo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3357,7 +3357,7 @@ function count_by_pmhuiramba($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huiramba'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Huiramba'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3366,7 +3366,7 @@ function count_by_pminda($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Indaparapeo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Indaparapeo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3375,7 +3375,7 @@ function count_by_pmirim($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Irimbo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Irimbo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3384,7 +3384,7 @@ function count_by_pmixt($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ixtlán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ixtlán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3393,7 +3393,7 @@ function count_by_pmjac($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jacona'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jacona'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3402,7 +3402,7 @@ function count_by_pmjime($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jiménez'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jiménez'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3411,7 +3411,7 @@ function count_by_pmjiq($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jiquilpan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jiquilpan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3420,7 +3420,7 @@ function count_by_pmsixver($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de José Sixto Verduzco'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de José Sixto Verduzco'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3429,7 +3429,7 @@ function count_by_pmjunga($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jungapeo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Jungapeo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3438,7 +3438,7 @@ function count_by_pmhuac($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de la Huacana'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de la Huacana'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3447,7 +3447,7 @@ function count_by_pmlapiedad($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de la Piedad'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de la Piedad'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3456,7 +3456,7 @@ function count_by_pmlagu($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Lagunillas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Lagunillas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3465,7 +3465,7 @@ function count_by_pmlc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Lázaro Cárdenas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Lázaro Cárdenas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3474,7 +3474,7 @@ function count_by_pmlosreyes($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de los Reyes'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de los Reyes'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3483,7 +3483,7 @@ function count_by_pmmadero($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Madero'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Madero'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3492,7 +3492,7 @@ function count_by_pmmarav($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Maravatío'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Maravatío'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3501,7 +3501,7 @@ function count_by_pmmc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Marcos Castellanos'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Marcos Castellanos'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3510,7 +3510,7 @@ function count_by_pmmorelia($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Morelia'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Morelia'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3519,7 +3519,7 @@ function count_by_pmmorelos($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Morelos'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Morelos'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3528,7 +3528,7 @@ function count_by_pmmugica($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Múgica'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Múgica'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3537,7 +3537,7 @@ function count_by_pmnahuatzen($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nahuatzen'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nahuatzen'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3546,7 +3546,7 @@ function count_by_pmnocu($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nocupétaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nocupétaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3555,7 +3555,7 @@ function count_by_pmnparan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nuevo Parangaricutiro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nuevo Parangaricutiro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3564,7 +3564,7 @@ function count_by_pmnurecho($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nuevo Urecho'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Nuevo Urecho'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3573,7 +3573,7 @@ function count_by_pmnumaran($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Numarán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Numarán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3582,7 +3582,7 @@ function count_by_pmocampo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ocampo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ocampo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3591,7 +3591,7 @@ function count_by_pmpajacuaran($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Pajacuarán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Pajacuarán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3600,7 +3600,7 @@ function count_by_pmpanin($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Panindícuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Panindícuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3609,7 +3609,7 @@ function count_by_pmparacho($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Paracho
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Paracho
     '";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
@@ -3619,7 +3619,7 @@ function count_by_pmpatz($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Pátzcuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Pátzcuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3628,7 +3628,7 @@ function count_by_pmpenja($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Penjamillo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Penjamillo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3637,7 +3637,7 @@ function count_by_pmperiban($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Peribán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Peribán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3646,7 +3646,7 @@ function count_by_pmpure($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Purépero'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Purépero'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3655,7 +3655,7 @@ function count_by_pmpuruan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Puruándiro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Puruándiro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3664,7 +3664,7 @@ function count_by_pmqueren($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Queréndaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Queréndaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3673,7 +3673,7 @@ function count_by_pmquiroga($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Quiroga'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Quiroga'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3682,7 +3682,7 @@ function count_by_pmsahuayo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Sahuayo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Sahuayo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3691,7 +3691,7 @@ function count_by_pmsalvesc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Salvador Escalante'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Salvador Escalante'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3700,7 +3700,7 @@ function count_by_pmsam($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Santa Ana Maya'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Santa Ana Maya'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3709,7 +3709,7 @@ function count_by_pmseng($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Senguio'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Senguio'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3718,7 +3718,7 @@ function count_by_pmtacam($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tacámbaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tacámbaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3727,7 +3727,7 @@ function count_by_pmtanc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tancítaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tancítaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3736,7 +3736,7 @@ function count_by_pmtangamandapio($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tangamandapio'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tangamandapio'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3745,7 +3745,7 @@ function count_by_pmtangancicuaro($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tangancicuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tangancicuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3754,7 +3754,7 @@ function count_by_pmtanhuato($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tanhuato'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tanhuato'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3763,7 +3763,7 @@ function count_by_pmtaretan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Taretan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Taretan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3772,7 +3772,7 @@ function count_by_pmtarimbaro($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tarímbaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tarímbaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3781,7 +3781,7 @@ function count_by_pmtepalcatepec($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tepalcatepec'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tepalcatepec'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3790,7 +3790,7 @@ function count_by_pmtingambato($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tingambato'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tingambato'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3799,7 +3799,7 @@ function count_by_pmtingu($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tingüindín'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tingüindín'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3808,7 +3808,7 @@ function count_by_pmtiqui($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tiquicheo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tiquicheo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3817,7 +3817,7 @@ function count_by_pmtlalpu($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tlalpujahua'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tlalpujahua'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3826,7 +3826,7 @@ function count_by_pmtlaza($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tlazazalca'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tlazazalca'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3835,7 +3835,7 @@ function count_by_pmtocumbo($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tocumbo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tocumbo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3844,7 +3844,7 @@ function count_by_pmtux($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tuxpan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tuxpan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3853,7 +3853,7 @@ function count_by_pmtuzan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tuzantla'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tuzantla'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3862,7 +3862,7 @@ function count_by_pmtzintzun($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tzintzuntzan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tzintzuntzan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3871,7 +3871,7 @@ function count_by_pmtzit($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tzitzio'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Tzitzio'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3880,7 +3880,7 @@ function count_by_pmuruapan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Uruapan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Uruapan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3889,7 +3889,7 @@ function count_by_pmvenus($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Venustiano Carranza'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Venustiano Carranza'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3899,7 +3899,7 @@ function count_by_pmvillamar($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Villamar'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Villamar'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3909,7 +3909,7 @@ function count_by_pmvh($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Vista Hermosa'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Vista Hermosa'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3919,7 +3919,7 @@ function count_by_pmyure($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Yurécuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Yurécuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3929,7 +3929,7 @@ function count_by_pmzaca($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zacapu'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zacapu'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3939,7 +3939,7 @@ function count_by_pmzamora2($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zamora'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zamora'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3949,7 +3949,7 @@ function count_by_pmzinap($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zináparo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zináparo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3959,7 +3959,7 @@ function count_by_pmzinapecuaro($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zinapécuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zinapécuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3969,7 +3969,7 @@ function count_by_pmzira($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ziracuaretiro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Ziracuaretiro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3979,7 +3979,7 @@ function count_by_pmzita($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zitácuaro'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Presidencia Municipal de Zitácuaro'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3989,7 +3989,7 @@ function count_by_procamich($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Agraria En Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Agraria En Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -3999,7 +3999,7 @@ function count_by_padt($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Auxiliar de la Defensa del Trabajo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Auxiliar de la Defensa del Trabajo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4009,7 +4009,7 @@ function count_by_pfdt($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Federal de la Defensa del Trabajo'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Federal de la Defensa del Trabajo'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4019,7 +4019,7 @@ function count_by_profeco($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Federal del Consumidor PROFECO'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Procuraduría Federal del Consumidor PROFECO'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4029,7 +4029,7 @@ function count_by_qsasr($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Quejas Sin Autoridad Señalada Como Responsable'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Quejas Sin Autoridad Señalada Como Responsable'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4039,7 +4039,7 @@ function count_by_sce($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Contraloría del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Contraloría del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4049,7 +4049,7 @@ function count_by_secbien($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Bienestar'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Bienestar'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4059,7 +4059,7 @@ function count_by_scop($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Comunicaciones y Obras Publicas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Comunicaciones y Obras Publicas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4069,7 +4069,7 @@ function count_by_sct($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Comunicaciones y Transportes SCT'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Comunicaciones y Transportes SCT'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4079,7 +4079,7 @@ function count_by_sculte($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Cultura en el Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Cultura en el Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4089,7 +4089,7 @@ function count_by_sde($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Desarrollo Económico'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Desarrollo Económico'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4099,7 +4099,7 @@ function count_by_sdra($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Desarrollo Rural y Agroalimentario'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Desarrollo Rural y Agroalimentario'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4109,7 +4109,7 @@ function count_by_sdsh($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Desarrollo Social y Humano'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Desarrollo Social y Humano'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4119,7 +4119,7 @@ function count_by_sdtum($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Desarrollo Territorial Urbano y Movilidad'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Desarrollo Territorial Urbano y Movilidad'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4129,7 +4129,7 @@ function count_by_see($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Educación del Estado'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Educación del Estado'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4139,7 +4139,7 @@ function count_by_sepf($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Educación Pública Federal'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Educación Pública Federal'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4149,7 +4149,7 @@ function count_by_sfa($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Finanzas y Administración'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Finanzas y Administración'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4159,7 +4159,7 @@ function count_by_secgobernacion($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Gobernación'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Gobernación'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4169,7 +4169,7 @@ function count_by_secgobierno($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Gobierno'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Gobierno'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4179,7 +4179,7 @@ function count_by_sisdmm($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Igualdad Sustantiva y Desarrollo de Las Mujeres Michoacanas'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Igualdad Sustantiva y Desarrollo de Las Mujeres Michoacanas'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4189,7 +4189,7 @@ function count_by_sedena($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de la Defensa Nacional Ejercito Mexicano'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de la Defensa Nacional Ejercito Mexicano'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4199,7 +4199,7 @@ function count_by_sme($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de los Migrantes En El Extranjero'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de los Migrantes En El Extranjero'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4210,7 +4210,7 @@ function count_by_marina($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Marina y Armada de México'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Marina y Armada de México'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4220,7 +4220,7 @@ function count_by_sre($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Relaciones Exteriores SRE'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Relaciones Exteriores SRE'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4230,7 +4230,7 @@ function count_by_ss($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Salud'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Salud'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4240,7 +4240,7 @@ function count_by_ssp($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Seguridad Pública'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaría de Seguridad Pública'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4250,7 +4250,7 @@ function count_by_sspe($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Seguridad Pública Estatal'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Seguridad Pública Estatal'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4260,7 +4260,7 @@ function count_by_sspf($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Seguridad Pública Federal'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Seguridad Pública Federal'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4270,7 +4270,7 @@ function count_by_sspc($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Seguridad y Protección Ciudadana'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria de Seguridad y Protección Ciudadana'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4280,7 +4280,7 @@ function count_by_stps($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria del Trabajo y Previsión Social'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Secretaria del Trabajo y Previsión Social'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4290,7 +4290,7 @@ function count_by_sifdmsf($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Sistema Integral de Financiamiento para el Desarrollo de Michoacán Si Financia'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Sistema Integral de Financiamiento para el Desarrollo de Michoacán Si Financia'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4300,7 +4300,7 @@ function count_by_smrt($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Sistema Michoacano de Radio y Televisión'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Sistema Michoacano de Radio y Televisión'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4310,7 +4310,7 @@ function count_by_dif($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Sistema Para el Desarrollo Integral de la Familia DIF'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Sistema Para el Desarrollo Integral de la Familia DIF'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4320,7 +4320,7 @@ function count_by_stj($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Supremo Tribunal de Justicia'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Supremo Tribunal de Justicia'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4330,7 +4330,7 @@ function count_by_tbm($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Telebachillerato de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Telebachillerato de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4340,7 +4340,7 @@ function count_by_tcaem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Tribunal de Conciliación y Arbitraje del Estado de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Tribunal de Conciliación y Arbitraje del Estado de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4350,7 +4350,7 @@ function count_by_tjaem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Tribunal de Justicia Administrativa del Estado de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Tribunal de Justicia Administrativa del Estado de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4360,7 +4360,7 @@ function count_by_uiim($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Universidad Intercultural Indígena de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Universidad Intercultural Indígena de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4370,7 +4370,7 @@ function count_by_umsnh($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Universidad Michoacana de San Nicolas de Hidalgo UMSNH'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Universidad Michoacana de San Nicolas de Hidalgo UMSNH'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4380,7 +4380,7 @@ function count_by_uvem($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Universidad Virtual del Estado de Michoacán'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Universidad Virtual del Estado de Michoacán'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4390,7 +4390,7 @@ function count_by_vismorelia($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Visitaduría Morelia'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Visitaduría Morelia'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4400,7 +4400,7 @@ function count_by_visuruapan($table)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Visitaduría Uruapan'";
+    $sql = "SELECT COUNT(autoridad_responsable) AS total FROM " . $db->escape($table) . " WHERE autoridad_responsable = 'Visitaduría Uruapan'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4426,7 +4426,7 @@ function count_by_sin_est($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Sin estudios' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Sin estudios' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4435,7 +4435,7 @@ function count_by_primaria($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Primaria' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Primaria' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4444,7 +4444,7 @@ function count_by_secundaria($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Secundaria' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Secundaria' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4453,7 +4453,7 @@ function count_by_preparatoria($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Preparatoria' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Preparatoria' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4462,7 +4462,7 @@ function count_by_licenciatura($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Licenciatura' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Licenciatura' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4471,7 +4471,7 @@ function count_by_especialidad($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Especialidad' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Especialidad' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4480,7 +4480,7 @@ function count_by_maestria($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Maestría' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Maestría' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4489,7 +4489,7 @@ function count_by_doctorado($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Doctorado' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Doctorado' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4498,7 +4498,7 @@ function count_by_posdoctorado($table, $tipo)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Posdoctorado' and tipo_solicitud = '{$db->escape($tipo)}'";
+    $sql = "SELECT COUNT(nivel_estudios) AS total FROM " . $db->escape($table) . " WHERE nivel_estudios = 'Posdoctorado' and tipo_solicitud = '{$db->escape($tipo)}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -4765,7 +4765,7 @@ function notificacion()
   // $sql  = "SELECT COUNT(notificacion) as total FROM quejas_dates;";
   // return find_by_sql($sql);
   global $db;
-  $sql    = "SELECT COUNT('notificacion') AS total FROM quejas_dates WHERE notificacion = 1";
+  $sql = "SELECT COUNT('notificacion') AS total FROM quejas_dates WHERE notificacion = 1";
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -5393,7 +5393,7 @@ function count_by_competencias()
 {
   global $db;
 
-  $sql    = "SELECT COUNT(id_queja_date) AS total FROM quejas_dates WHERE revision_presidencia=1 ";
+  $sql = "SELECT COUNT(id_queja_date) AS total FROM quejas_dates WHERE revision_presidencia=1 ";
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -5653,7 +5653,7 @@ function count_by_mediacion($year)
 {
   global $db;
 
-  $sql    = "SELECT COUNT(id_queja_date) AS total FROM quejas_dates q WHERE  mediacion = '1' AND  folio_queja LIKE '%/{$year}-%' ";
+  $sql = "SELECT COUNT(id_queja_date) AS total FROM quejas_dates q WHERE  mediacion = '1' AND  folio_queja LIKE '%/{$year}-%' ";
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -5682,7 +5682,7 @@ function count_by_id_quejas($table, $nombre_id, $year)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE  folio_queja LIKE '%/{$year}-%' ";
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE  folio_queja LIKE '%/{$year}-%' ";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -5733,7 +5733,7 @@ function find_all_procesosUT($tipo_accion)
 function count_by_procesoUT($tipo_accion)
 {
   global $db;
-  $sql    = "SELECT COUNT(id_recursos_decuncias) AS total FROM recursos_decuncias WHERE tipo_accion='" . $tipo_accion . "';";
+  $sql = "SELECT COUNT(id_recursos_decuncias) AS total FROM recursos_decuncias WHERE tipo_accion='" . $tipo_accion . "';";
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -6596,7 +6596,7 @@ function find_all_accionesCSI($year)
 function count_by_reclasificacion($id_queja_date)
 {
   global $db;
-  $sql    = "SELECT COUNT(id_queja_date) as total FROM rel_queja_reclasificacion WHERE id_queja_date= " . $db->escape($id_queja_date);
+  $sql = "SELECT COUNT(id_queja_date) as total FROM rel_queja_reclasificacion WHERE id_queja_date= " . $db->escape($id_queja_date);
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -6618,7 +6618,7 @@ function find_reclasificacion_queja($id)
 function count_by_clasificacion($id_queja_date)
 {
   global $db;
-  $sql    = "SELECT  sum(total) as total
+  $sql = "SELECT  sum(total) as total
 				FROM (
 	SELECT COUNT(id_queja_date) as total FROM rel_queja_der_vuln WHERE id_queja_date=" . $db->escape($id_queja_date) .
     " UNION
@@ -6705,7 +6705,7 @@ function find_by_solicitud($id)
 function count_oficiosInter($area)
 {
   global $db;
-  $sql    = "SELECT COUNT(id_env_corresp) as total FROM `envio_correspondencia` WHERE fecha is null AND se_turna_a_area=" . $area;
+  $sql = "SELECT COUNT(id_env_corresp) as total FROM `envio_correspondencia` WHERE fecha is null AND se_turna_a_area=" . $area;
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -6717,7 +6717,7 @@ function count_oficiosInter($area)
 function count_oficiosExt($area)
 {
   global $db;
-  $sql    = "SELECT COUNT(id_correspondencia) as total FROM `correspondencia` WHERE fecha_seguimiento is null AND area_creacion=" . $area;
+  $sql = "SELECT COUNT(id_correspondencia) as total FROM `correspondencia` WHERE fecha_seguimiento is null AND area_creacion=" . $area;
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
 }
@@ -6815,7 +6815,7 @@ function count_by_id_anio($table, $nombre_id, $folio, $year)
 {
   global $db;
   if (tableExists($table)) {
-    $sql    = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE {$folio} LIKE '%/{$year}-%' ";;
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE {$folio} LIKE '%/{$year}-%' ";;
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
@@ -7362,7 +7362,7 @@ tipo_documento
 function count_by_monitoreo($idMon, $idCon)
 {
   global $db;
-  $sql    = "SELECT COUNT(id_rel_monitoreo_oficios) as total FROM rel_monitoreo_oficios a 
+  $sql = "SELECT COUNT(id_rel_monitoreo_oficios) as total FROM rel_monitoreo_oficios a 
  WHERE id_monitoreo_politicas= " . $idMon . " AND tipo_documento='seg' AND id_contactos_politicas= " . $idCon;
   $result = $db->query($sql);
   return ($db->fetch_assoc($result));
@@ -8252,11 +8252,10 @@ function find_by_id_inmueble($id)
 function count_by_trabajadores()
 {
   global $db;
-  
-    $sql    = "SELECT COUNT(id_det_usuario) AS total FROM `detalles_usuario` a WHERE estatus_detalle=1;";
-    $result = $db->query($sql);
-    return ($db->fetch_assoc($result));
-  
+
+  $sql = "SELECT COUNT(id_det_usuario) AS total FROM `detalles_usuario` a WHERE estatus_detalle=1;";
+  $result = $db->query($sql);
+  return ($db->fetch_assoc($result));
 }
 /*------------------------------------------------------------------------*/
 /* Funcion para contar las solicitudes de informacion*/
@@ -8264,8 +8263,21 @@ function count_by_trabajadores()
 function count_by_anioSol($year)
 {
   global $db;
-	$year= substr($year, -2);
-    $sql    = "SELECT COUNT(id_solicitudes_informacion) AS total FROM solicitudes_informacion WHERE folio_solicitud LIKE '1603528{$year}%'";;
+  $year = substr($year, -2);
+  $sql = "SELECT COUNT(id_solicitudes_informacion) AS total FROM solicitudes_informacion WHERE folio_solicitud LIKE '1603528{$year}%'";
+  $result = $db->query($sql);
+  return ($db->fetch_assoc($result));
+}
+
+/*-------------------------------------------------------------------------------------*/
+/* Funcion para saber si se tiene cargada la licencia de funcionamiento*/
+/*-------------------------------------------------------------------------------------*/
+function buscar_licencia_funcionamiento($table, $nombre_id, $campo, $year, $campo2)
+{
+  global $db;
+  if (tableExists($table)) {
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table). " WHERE {$campo} = '{$year}' AND {$nombre_id} = '{$campo2}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
+  }
 }

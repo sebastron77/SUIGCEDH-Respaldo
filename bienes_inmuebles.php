@@ -58,15 +58,15 @@ $all_inmuebles = find_all_inmuebles();
                     <a href="add_bien_inmueble.php" class="btn btn-info pull-right">Agregar Inmueble</a>
                 <?php endif; ?>
             </div>
-
             <div class="panel-body">
                 <table class="datatable table table-bordered table-striped">
                     <thead class="thead-purple">
                         <tr style="height: 10px;">
                             <th class="text-center" style="width: 1%;">#</th>
+                            <th class="text-center" style="width: 3%;">Vig. Lic. Func.</th>
                             <th class="text-center" style="width: 7%;">Denominación</th>
                             <th class="text-center" style="width: 7%;">Municipio</th>
-                            <th class="text-center" style="width: 7%;">Tipo Inmueble</th>
+                            <th th class="text-center" style="width: 7%;">Tipo Inmueble</th>
                             <th class="text-center" style="width: 7%;">Origen Propiedad</th>
                             <th class="text-center" style="width: 15%;">Área Responsable</th>
                             <?php if ($nivel_user == 1 || $nivel_user == 28) : ?>
@@ -75,9 +75,36 @@ $all_inmuebles = find_all_inmuebles();
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($all_inmuebles as $a_inmueble) : ?>
+                        <?php foreach ($all_inmuebles as $a_inmueble):
+                            $anio_actual = date('Y');
+                            $anio_inicio = 2021;
+                            $fecha_actual = (int) date('md'); // Ej. 0625 = 06/25 - 25 de junio
+                            $tiene_todo = true;
+
+                            // Recorremos desde 2021 hasta el año actual
+                            for ($anio = $anio_inicio; $anio <= $anio_actual; $anio++) {
+                                $licencia = buscar_licencia_funcionamiento('rel_licencias_funcionamiento', 'id_bien_inmueble', 'ejercicio', $anio, $a_inmueble['id_bien_inmueble']);
+                                if ($licencia['total'] == 0) {
+                                    //Si el año actual en el que va el for no esta cargado arroja false y se rompe el ciclo.
+                                    //Si ya esta todo cargado y la consulta da 1, entonces arroja true.
+                                    $tiene_todo = false;
+                                    break;
+                                }
+                            }
+                        ?>
                             <tr>
                                 <td class="text-center"><?php echo count_id(); ?></td>
+                                <td class="text-center">
+                                    <?php if ($tiene_todo): ?>
+                                        <span class="material-symbols-outlined semaforo verde" title="Licencias completas">check</span>
+                                    <?php elseif ($fecha_actual <= 815): ?>
+                                        <span class="material-symbols-outlined semaforo amarillo" title="Aún en tiempo">timer</span>
+                                    <?php else: ?>
+                                        <span class="material-symbols-outlined semaforo rojo" title="Licencias incompletas">exclamation</span>
+                                    <?php endif; ?>
+                                </td>
+                                <!-- resto de columnas -->
+
                                 <td class="text-center">
                                     <?php echo ucwords($a_inmueble['denominacion']) ?>
                                 </td>
@@ -96,23 +123,23 @@ $all_inmuebles = find_all_inmuebles();
                                 <td class="text-center">
                                     <?php if ($nivel_user == 1 || $nivel_user == 28) : ?>
                                         <div class="btn-group">
-                                            <a href="ver_info_inmueble.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-info" data-toggle="tooltip" title="Ver información">
-                                                <span class="material-symbols-outlined" style="font-size: 22px; color: white; margin-top: 8px;">
+                                            <a href="ver_info_inmueble.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-info" data-toggle="tooltip" title="Ver información" style="height: 35px; width: 35px;">
+                                                <span class="material-symbols-rounded">
                                                     visibility
                                                 </span>
                                             </a>
-                                            <a href="edit_bien_inmueble.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Editar">
-                                                <span class="material-symbols-outlined" style="font-size: 22px; color: black; margin-top: 8px;">
+                                            <a href="edit_bien_inmueble.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Editar" style="height: 35px; width: 35px;">
+                                                <span class="material-symbols-rounded" style="color: black">
                                                     edit
                                                 </span>
                                             </a>
-                                            <a href="licencias_funcionamiento.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Licencias" style="background-color: #ff4574; border-color: #ff4574">
-                                                <span class="material-symbols-outlined" style="font-size: 22px; color: white; margin-top: 8px;">
+                                            <a href="licencias_funcionamiento.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Licencias" style="background-color: #ff4574; border-color: #ff4574;">
+                                                <span class="material-symbols-outlined" style="color: white; margin-top: 1px; margin-left: -3px;">
                                                     build
                                                 </span>
                                             </a>
-                                            <a href="expediente_inmuebles.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Expediente" style="background-color:#3096e9; border-color: #3096e9">
-                                                <span class="material-symbols-outlined" style="font-size: 22px; color: white; margin-top: 8px;">
+                                            <a href="expediente_inmuebles.php?id=<?php echo (int) $a_inmueble['id_bien_inmueble']; ?>" class="btn btn-md btn-warning" data-toggle="tooltip" title="Expediente" style="background-color:#3096e9; border-color: #3096e9;">
+                                                <span class="material-symbols-outlined" style="color: white;  margin-top: 3px; margin-left: -1px;">
                                                     home_storage
                                                 </span>
                                             </a>
@@ -120,6 +147,7 @@ $all_inmuebles = find_all_inmuebles();
                                     <?php endif; ?>
                                 </td>
                             </tr>
+
                         <?php endforeach; ?>
                     </tbody>
                 </table>

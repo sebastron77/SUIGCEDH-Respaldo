@@ -422,7 +422,7 @@ a.btn.btn-info:hover,
 }
 
 a.btn.btn-warning {
-  font-size: 14px;
+  font-size: 12px;
   background-color: #ffd500;
 }
 
@@ -1838,6 +1838,7 @@ body.dark-mode button.btn.btn-warning {
 
 body.dark-mode a.btn.btn-md.btn-dark,
 body.dark-mode a.btn.btn-md.btn-delete {
+  font-size: 12px;
   background-color: #6a21f3 !important;
 }
 
@@ -1846,8 +1847,7 @@ body.dark-mode ul.submenu li a:hover {
 }
 
 body.dark-mode .thead-purple {
-  background: 
-    rgb(77, 11, 190);
+  background: rgb(77, 11, 190);
 }
 
 body.dark-mode .thead-purple th {
@@ -1871,4 +1871,46 @@ body.dark-mode .row .col-md-12 {
 body.dark-mode iframe {
   border: 2px solid #a88cff !important;
   background-color: #1e1e2f !important;
+}
+
+a span.material-symbols-outlined,
+a span.material-symbols-rounded {
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.semaforo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.semaforo.verde {
+  background-color: #0d912c;
+  color: white
+}
+
+.semaforo.amarillo {
+  background-color: #ffc107;
+  color: black !important;
+  font-size: 23px;
+}
+
+body.dark-mode .semaforo.amarillo {
+  background-color: #ffc107;
+  color: black !important;
+  font-size: 23px;
+}
+
+.semaforo.rojo {
+  background-color: #d82d3e;
+  color: white
 }
