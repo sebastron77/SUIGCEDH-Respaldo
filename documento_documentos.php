@@ -14,7 +14,7 @@ $id_user = $user['id_user'];
 $busca_area = area_usuario($id_user);
 $otro = $busca_area['nivel_grupo'];
 $nivel = $user['user_level'];
-$anio= substr($e_detalle['folio_queja'],-6,4);
+$anio = substr($e_detalle['folio_queja'], -6, 4);
 
 if (isset($_POST['procesal_queja'])) {
 
@@ -24,10 +24,10 @@ if (isset($_POST['procesal_queja'])) {
         $fecha_acuerdo = remove_junk($db->escape($_POST['fecha_acuerdo']));
         $sintesis_documento = remove_junk($db->escape($_POST['sintesis_documento']));
         $publico = remove_junk($db->escape($_POST['publico'] == 'on' ? 1 : 0));
-      
+
 
         $folio_editar = $e_detalle['folio_queja'];
-        
+
 
         if ($fecha_acuerdo) {
 
@@ -47,37 +47,34 @@ if (isset($_POST['procesal_queja'])) {
                 $move = move_uploaded_file($temp, $carpeta . "/" . $name);
                 $move2 = move_uploaded_file($temp2, $carpeta . "/" . $name_publico);
             }
-			
-			/*creo archivo index para que no se muestre el Index Of*/
-		$source = 'uploads/index.php';
-		if (copy($source, $carpeta.'/index.php')) {
-			echo "El archivo ha sido copiado exitosamente.";
-		} else {
-			echo "Ha ocurrido un error al copiar el archivo.";
-		}
 
-            
+            /*creo archivo index para que no se muestre el Index Of*/
+            $source = 'uploads/index.php';
+            if (copy($source, $carpeta . '/index.php')) {
+                echo "El archivo ha sido copiado exitosamente.";
+            } else {
+                echo "Ha ocurrido un error al copiar el archivo.";
+            }
+
+
             $query = "INSERT INTO rel_queja_acuerdos ( id_queja_date, tipo_acuerdo,fecha_acuerdo,acuerdo_adjunto,acuerdo_adjunto_publico,sintesis_documento,interno,publico,origen_acuerdo,user_creador,fecha_alta) 
                     VALUES ({$id},'{$tipo_acuerdo}','{$fecha_acuerdo}','{$name}','','{$sintesis_documento}',1,0,'Documentos Internos',{$id_user},NOW());";
 
-            
-			if ($db->query($query)) {
-            //sucess
-            $session->msg('s', " Los datos de los acuerdos se han sido agregado con éxito.");
-            insertAccion($user['id_user'], '"' . $user['username'] . '" agregó acuerdo a queja, Folio: ' . $folio_editar . '.', 1);
-            ?>
-							<script language="javascript">				
-					parent.location.reload();
-								
-							</script>
-			<?php
-        } else {
-            //faile
-            $session->msg('d', ' No se pudieron agregar los datos de los documnetos.');
-            redirect('acuerdos_queja.php?id=' . (int) $e_detalle['id_queja_date'], false);
-        }
-		
-		
+
+            if ($db->query($query)) {
+                //sucess
+                $session->msg('s', " Los datos de los acuerdos se han sido agregado con éxito.");
+                insertAccion($user['id_user'], '"' . $user['username'] . '" agregó acuerdo a queja, Folio: ' . $folio_editar . '.', 1);
+?>
+                <script language="javascript">
+                    parent.location.reload();
+                </script>
+<?php
+            } else {
+                //faile
+                $session->msg('d', ' No se pudieron agregar los datos de los documnetos.');
+                redirect('acuerdos_queja.php?id=' . (int) $e_detalle['id_queja_date'], false);
+            }
         } else {
             //faile
             $session->msg('d', ' No se pudieron agregar los datos de los acuerdos.');
@@ -103,47 +100,54 @@ if (isset($_POST['procesal_queja'])) {
 
 ?>
 <form method="post" action="documento_documentos.php?id=<?php echo (int) $e_detalle['id_queja_date']; ?>" enctype="multipart/form-data">
-<body style="background-color: #fff;">
- <input type="hidden" value="<?php echo (int) $e_detalle['id_queja_date']; ?>" name="id_queja_date" id="id_queja_date">
-	 <hr style="height: 1px; background-color: #370494; opacity: 1;">
-                <strong>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="#7263F0" width="25px" height="25px" viewBox="0 0 24 24" >
-                        <title>arrow-right-circle</title>
-                        <path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M6,13H14L10.5,16.5L11.92,17.92L17.84,12L11.92,6.08L10.5,7.5L14,11H6V13Z" />
-                    </svg>
-                    <span style="font-size: 20px; color: #7263F0">NUEVO DOCUMENTO INTERNO DE LA QUEJA</span>
-                </strong>
-                <div class="row">
-                     <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="id_tipo_resolucion">Nombre del Documento</label>
-                            <input type="text" class="form-control" name="tipo_acuerdo" required>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="id_tipo_resolucion">Fecha de Documento</label>
-                            <input type="date" class="form-control" name="fecha_acuerdo" required>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="id_tipo_resolucion">Archivo del Documento</label>
-                            <input id="acuerdo_adjunto" type="file" accept="application/pdf" class="form-control" name="acuerdo_adjunto" required>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label for="sintesis_documento">Síntesis del documento</label>
-                            <textarea class="form-control" name="sintesis_documento" id="sintesis_documento" cols="10" rows="3" required></textarea>
-                        </div>
-                    </div>
-                    
+    <script>
+        // Verificar si el modo oscuro está activado en localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 
+    <body style="background-color: #fff;">
+        <input type="hidden" value="<?php echo (int) $e_detalle['id_queja_date']; ?>" name="id_queja_date" id="id_queja_date">
+        <hr style="height: 1px; background-color: #370494; opacity: 1;">
+        <strong>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#7263F0" width="25px" height="25px" viewBox="0 0 24 24">
+                <title>arrow-right-circle</title>
+                <path d="M22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 22,12M6,13H14L10.5,16.5L11.92,17.92L17.84,12L11.92,6.08L10.5,7.5L14,11H6V13Z" />
+            </svg>
+            <span style="font-size: 20px; color: #7263F0">NUEVO DOCUMENTO INTERNO DE LA QUEJA</span>
+        </strong>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="id_tipo_resolucion">Nombre del Documento</label>
+                    <input type="text" class="form-control" name="tipo_acuerdo" required>
                 </div>
-				 <div class="form-group clearfix">                  
-                    <button type="submit" name="procesal_queja" class="btn btn-primary" value="subir">Guardar</button>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="id_tipo_resolucion">Fecha de Documento</label>
+                    <input type="date" class="form-control" name="fecha_acuerdo" required>
                 </div>
-				</body>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="id_tipo_resolucion">Archivo del Documento</label>
+                    <input id="acuerdo_adjunto" type="file" accept="application/pdf" class="form-control" name="acuerdo_adjunto" required>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="sintesis_documento">Síntesis del documento</label>
+                    <textarea class="form-control" name="sintesis_documento" id="sintesis_documento" cols="10" rows="3" required></textarea>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="form-group clearfix">
+            <button type="submit" name="procesal_queja" class="btn btn-primary" value="subir" style="background: #5305e2; border-color: #5305e2">Guardar</button>
+        </div>
+    </body>
 </form>

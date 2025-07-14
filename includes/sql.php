@@ -657,16 +657,26 @@ function authenticate($username = '', $password = '')
   global $db;
   $username = $db->escape($username);
   $password = $db->escape($password);
-  $sql  = "SELECT id_user,username,password,user_level,status FROM users WHERE username = '{$username}' LIMIT 1";
+
+  $sql = "SELECT id_user, username, password, user_level, status FROM users WHERE username = '{$username}' LIMIT 1";
   $result = $db->query($sql);
+
   if ($db->num_rows($result)) {
     $user = $db->fetch_assoc($result);
     $password_request = sha1($password);
-    if ($password_request === $user['password'] && $user['status'] != 0) {
-      return $user['id_user'];
+
+    if ($user['status'] == 0) {
+      return ['success' => false, 'error' => 'La cuenta no se encuentra activa.'];
     }
+
+    if ($password_request === $user['password']) {
+      return ['success' => true, 'user_id' => $user['id_user']];
+    } else {
+      return ['success' => false, 'error' => 'La contraseña es incorrecta. Intenta nuevamente.'];
+    }
+  } else {
+    return ['success' => false, 'error' => 'El nombre de usuario es incorrecto o no existe.'];
   }
-  return false;
 }
 /*-----------------------------------------------------*/
 /* Login con la información proporcionada en el $_POST,

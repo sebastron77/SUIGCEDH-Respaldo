@@ -1873,6 +1873,10 @@ body.dark-mode iframe {
   background-color: #1e1e2f !important;
 }
 
+body.dark-mode input.form-control:read-only {
+  background: #636363 !important;
+}
+
 a span.material-symbols-outlined,
 a span.material-symbols-rounded {
   font-size: 22px;
@@ -1883,7 +1887,7 @@ a span.material-symbols-rounded {
   vertical-align: middle;
   margin: 0;
   padding: 0;
-  color: white;
+  /* color: white; */
 }
 
 .semaforo {
