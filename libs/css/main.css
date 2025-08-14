@@ -1877,6 +1877,11 @@ body.dark-mode input.form-control:read-only {
   background: #636363 !important;
 }
 
+body.dark-mode .dataTables_wrapper .dataTables_info{
+  color: white !important;
+}
+
+
 a span.material-symbols-outlined,
 a span.material-symbols-rounded {
   font-size: 22px;

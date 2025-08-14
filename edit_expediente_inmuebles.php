@@ -41,6 +41,7 @@ $inmueble = find_by_id('bienes_inmuebles', $id_inmbueble, 'id_bien_inmueble');
 if (isset($_POST['edit_expediente_inmuebles'])) {
 
     $nombre_documento = $_POST['nombre_documento'];
+    $fecha_documento = $_POST['fecha_documento'];
 
     $folio = $inmueble['folio'];
     $resultado = str_replace("/", "-", $folio);
@@ -57,13 +58,13 @@ if (isset($_POST['edit_expediente_inmuebles'])) {
         mkdir($carpeta, 0777, true);
         $move =  move_uploaded_file($temp, $carpeta . "/" . $name);
     }
-    
-    if($name != ''){
-        $query  = "UPDATE rel_expedientes_inmuebles SET nombre_documento = '{$nombre_documento}', documento = '{$name}'";
+
+    if ($name != '') {
+        $query  = "UPDATE rel_expedientes_inmuebles SET nombre_documento = '{$nombre_documento}', documento = '{$name}', fecha_documento = '{$fecha_documento}'";
     }
 
-    if($name == ''){
-        $query  = "UPDATE rel_expedientes_inmuebles SET nombre_documento = '{$nombre_documento}'";
+    if ($name == '') {
+        $query  = "UPDATE rel_expedientes_inmuebles SET nombre_documento = '{$nombre_documento}', fecha_documento = '{$fecha_documento}'";
     }
 
     $query .= " WHERE id_rel_expedientes_inmuebles='{$db->escape($id_rel_exp_inmuebles)}'";
@@ -92,7 +93,7 @@ include_once('layouts/header.php'); ?>
         </strong>
     </div>
     <div class="panel-body" style=" margin-top: -5%;">
-        <form method="post" action="edit_expediente_inmuebles.php?id=<?php echo (int)$e_exp_inmueble['id_rel_expedientes_inmuebles']; ?>&idbi=<?php echo (int)$inmueble['id_bien_inmueble']?>" enctype="multipart/form-data">
+        <form method="post" action="edit_expediente_inmuebles.php?id=<?php echo (int)$e_exp_inmueble['id_rel_expedientes_inmuebles']; ?>&idbi=<?php echo (int)$inmueble['id_bien_inmueble'] ?>" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -107,6 +108,12 @@ include_once('layouts/header.php'); ?>
                         <label style="font-size:12px; color:#E3054F;">Archivo Actual:
                             <?php echo remove_junk($e_exp_inmueble['documento']); ?>
                         </label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fecha_documento">Fecha en el Documento</label>
+                        <input type="date" class="form-control" name="fecha_documento" id="fecha_documento" value="<?php echo $e_exp_inmueble['fecha_documento'] ?>">
                     </div>
                 </div>
             </div>

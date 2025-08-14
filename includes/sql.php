@@ -8286,8 +8286,44 @@ function buscar_licencia_funcionamiento($table, $nombre_id, $campo, $year, $camp
 {
   global $db;
   if (tableExists($table)) {
-    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table). " WHERE {$campo} = '{$year}' AND {$nombre_id} = '{$campo2}'";
+    $sql = "SELECT COUNT(" . $db->escape($nombre_id) . ") AS total FROM " . $db->escape($table) . " WHERE {$campo} = '{$year}' AND {$nombre_id} = '{$campo2}'";
     $result = $db->query($sql);
     return ($db->fetch_assoc($result));
   }
+}
+
+function find_all_resguardos()
+{
+  return find_by_sql("SELECT r.*, c.descripcion AS categoria, b.descripcion AS desc_padre
+                      FROM rel_resguardos_inv AS r
+                      LEFT JOIN cat_categorias_inv AS c ON r.id_categoria_inv = c.id_categoria_inv
+                      LEFT JOIN cat_categorias_inv AS b ON b.id_categoria_inv = c.padre
+                      INNER JOIN (
+                          SELECT id_categoria_inv, MAX(fecha_corte) AS max_fecha
+                          FROM rel_resguardos_inv
+                          GROUP BY id_categoria_inv
+                      ) AS ult ON r.id_categoria_inv = ult.id_categoria_inv AND r.fecha_corte = ult.max_fecha
+                      WHERE c.nivel = 2");
+}
+
+function find_all_hist_resguardos($id_categoria_inv)
+{
+  return find_by_sql("SELECT r.*, c.descripcion AS categoria, b.descripcion AS desc_padre, b.id_categoria_inv AS id_padre
+                      FROM rel_resguardos_inv AS r
+                      LEFT JOIN cat_categorias_inv AS c ON r.id_categoria_inv = c.id_categoria_inv
+                      LEFT JOIN cat_categorias_inv AS b ON b.id_categoria_inv = c.padre                      
+                      WHERE c.nivel = 2 AND r.id_categoria_inv = $id_categoria_inv
+                      ORDER BY r.fecha_corte DESC");
+}
+
+function find_all_cat_subcat_id($id)
+{
+  $sql = "SELECT a.id_categoria_inv, a.descripcion AS categoria, b.descripcion AS desc_padre, a.nivel
+          FROM cat_categorias_inv AS a
+          LEFT JOIN cat_categorias_inv AS b
+          ON b.id_categoria_inv = a.padre
+          WHERE a.nivel = 2 AND a.padre = '{$id}'
+          ORDER BY b.descripcion";
+  $result = find_by_sql($sql);
+  return $result;
 }

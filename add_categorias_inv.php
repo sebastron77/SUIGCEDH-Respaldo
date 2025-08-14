@@ -29,16 +29,24 @@ if (!$nivel_user) {
 if (isset($_POST['add_categorias_inv'])) {
 
     $descripcion = remove_junk($db->escape($_POST['descripcion']));
+    $resguardo = remove_junk($db->escape($_POST['resguardo']));
+
+    if(!$resguardo){
+        $resguardo = 0;
+    } else {
+        $resguardo = 1;
+    }
 
     $query  = "INSERT INTO cat_categorias_inv (";
-    $query .= "padre, descripcion, nivel, estatus";
+    $query .= "padre, descripcion, nivel, resguardo, estatus";
     $query .= ") VALUES (";
-    $query .= " 0, '{$descripcion}', 1, 1";
+    $query .= " 0, '{$descripcion}', 1, {$resguardo}, 1";
     $query .= ")";
+
     if ($db->query($query)) {
         //sucess
         $session->msg('s', "Categoría del inventario creada con éxito! ");
-		insertAccion($user['id_user'], '"' . $user['username'] . '" creó categoría padre en inventario (' . $descripcion . ').', 1);
+        insertAccion($user['id_user'], '"' . $user['username'] . '" creó categoría padre en inventario (' . $descripcion . ').', 1);
         redirect('add_categorias_inv.php', false);
     } else {
         //failed
@@ -62,10 +70,21 @@ if (isset($_POST['add_categorias_inv'])) {
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="resguardo">Visible para Resguardo</label><br><br>
+                    <select class="form-control" name="resguardo">
+                        <option value="">Escoge una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Sí</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="form-group clearfix">
-            <button type="submit" name="add_categorias_inv" class="btn btn-info" style="margin-top: -20%; margin-left: 42%;">Guardar</button>
-            <a href="categorias_inv.php" class="btn btn-md btn-success" data-toggle="tooltip" title="Regresar" style="margin-top: 40%; margin-left: -60%;">
+            <button type="submit" name="add_categorias_inv" class="btn btn-info" style="margin-top: -10%; margin-left: 42%;">Guardar</button>
+            <a href="categorias_inv.php" class="btn btn-md btn-success" data-toggle="tooltip" title="Regresar" style="margin-top: 20%; margin-left: -60%;">
                 Regresar
             </a>
         </div>

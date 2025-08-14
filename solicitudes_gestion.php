@@ -47,7 +47,6 @@ $area = 41;
 <a href="solicitudes.php" class="btn btn-info">Regresar a Áreas</a><br><br>
 <h1 style="color:#3A3D44">Procesos de Coordinación Administrativa</h1>
 
-
 <div class="row">
     <div class="col-md-12">
         <?php echo display_msg($msg); ?>
@@ -174,6 +173,14 @@ $area = 41;
             <div class="tile-icon">
                 <span class="material-symbols-rounded" style="font-size:95px;">
                     warehouse
+                </span>
+            </div>
+        </a>
+        <a href="resguardos_inventario.php" class="tile">
+            <div class="tile-tittle">Resguardos</div>
+            <div class="tile-icon">
+                <span class="material-symbols-rounded" style="font-size:95px;">
+                    article_person
                 </span>
             </div>
         </a>

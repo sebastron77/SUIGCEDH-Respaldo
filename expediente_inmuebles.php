@@ -43,12 +43,11 @@ if ($nivel_user > 29) {
 if (!$nivel_user) {
     redirect('home.php');
 }
-?>
 
-<?php
 if (isset($_POST['expediente_inmuebles'])) {
     $documentos = array();
     $nombre_documento = $_POST['nombre_documento'];
+    $fecha_documento = !empty($_POST['fecha_documento']) ? $_POST['fecha_documento'] : date('Y-m-d');
     $fecha_creacion = date('Y-m-d');
 
     foreach ($_FILES["documento"]["name"] as $key => $nombreArchivo) {
@@ -79,9 +78,9 @@ if (isset($_POST['expediente_inmuebles'])) {
     // Inserta en la base de datos
     foreach ($documentos as $doc) {
         $query = "INSERT INTO rel_expedientes_inmuebles (
-            id_bien_inmueble, nombre_documento, documento, user_creador, fecha_creacion
+            id_bien_inmueble, nombre_documento, documento, fecha_documento, user_creador, fecha_creacion
         ) VALUES (
-            '{$id_inmueble}', '{$doc['nombre_documento']}', '{$doc['documento']}', '{$id_user}', '{$fecha_creacion}'
+            '{$id_inmueble}', '{$doc['nombre_documento']}', '{$doc['documento']}', '{$fecha_documento}', '{$id_user}', '{$fecha_creacion}'
         )";
         $db->query($query);
     }
@@ -109,7 +108,7 @@ if (isset($_POST['expediente_inmuebles'])) {
             html += '           <span class="material-symbols-rounded" style="margin-top: 1%; color: #3a3d44;">apartment</span>';
             html += '           <p style="font-size: 15px; font-weight: bold; margin-top: -22px; margin-left: 11%">EXPEDIENTE ACADÉMICO</p>';
             html += '       </div>';
-            html += '	    <div class="col-md-2" style="margin-left: -5%; margin-top: -1px;">';
+            html += '	    <div class="col-md-2" style="margin-left: -1%; margin-top: -1px;">';
             html += '	        <button type="button" class="btn btn-outline-danger" id="removeRow" style="width: 50px; height: 30px"> ';
             html += '       	    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-x-fill" viewBox="0 0 16 16">';
             html += '	    		<path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5  0 0 0-.5-.5.5.5 0 0 1-.5-.5Z"></path>';
@@ -131,6 +130,12 @@ if (isset($_POST['expediente_inmuebles'])) {
             html += '               <input type="file" accept="application/pdf" class="form-control" name="documento[]">';
             html += '           </div>';
             html += '       </div>';
+            html += '       <div class="col-md-3">';
+            html += '           <div class="form-group">';
+            html += '               <label for="fecha_documento">Fecha en el Documento</label>';
+            html += '               <input type="date" class="form-control" name="fecha_documento" id="fecha_documento">';
+            html += '           </div>';
+            html += '       </div>';
             html += '   </div>';
             html += '';
             $('#newRow').append(html);
@@ -139,15 +144,13 @@ if (isset($_POST['expediente_inmuebles'])) {
         $(document).on('click', '#removeRow', function() {
             $(this).closest('#inputFormRow').remove();
         });
-
-
     });
 </script>
 
 <?php include_once('layouts/header.php'); ?>
 <div class="col-md-12"> <?php echo display_msg($msg); ?> </div>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
         <div class="panel login-page5" style="margin-left: 0%;">
             <div class="panel-heading" style=" margin-top: 2%;">
                 <strong style="font-size: 16px; font-family: 'Montserrat', sans-serif;">
@@ -187,6 +190,12 @@ if (isset($_POST['expediente_inmuebles'])) {
                                 <input type="file" class="form-control" name="documento[]" id="documento[]" required>
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="fecha_documento">Fecha en el Documento</label>
+                                <input type="date" class="form-control" name="fecha_documento" id="fecha_documento">
+                            </div>
+                        </div>
                     </div>
                     <div class="row" id="newRow" style="margin-top: 3%;">
                     </div>
@@ -202,15 +211,16 @@ if (isset($_POST['expediente_inmuebles'])) {
             </div>
         </div>
     </div>
-    <div class="col-md-6 panel-body" style="height: 100%;">
+    <div class="col-md-7 panel-body" style="height: 100%;">
         <table class="table table-bordered table-striped" style="width: 100%; float: left;" id="tblProductos">
             <thead class="thead-purple" style="margin-top: -50px;">
                 <tr style="height: 10px;">
                     <th colspan="5" style="text-align:center; font-size: 14px;">Expediente General del Inmueble</th>
                 </tr>
                 <tr style="height: 10px;">
-                    <th class="text-center" style="width: 45%; font-size: 14px;">Nombre Documento</th>
-                    <th class="text-center" style="width: 45%; font-size: 14px;">Documento</th>
+                    <th class="text-center" style="width: 35%; font-size: 14px;">Nombre Documento</th>
+                    <th class="text-center" style="width: 35%; font-size: 14px;">Documento</th>
+                    <th class="text-center" style="width: 15%; font-size: 14px;">Fecha en Documento</th>
                     <?php if ($nivel_user == 1 || $nivel_user == 28): ?>
                         <th class="text-center" style="width: 10%; font-size: 14px;">Acciones</th>
                     <?php endif; ?>
@@ -227,11 +237,12 @@ if (isset($_POST['expediente_inmuebles'])) {
                                 <?php echo $detalle['documento'] ?>
                             </a>
                         </td>
+                        <td class="text-center" style="font-size: 14px;"><?php echo $detalle['fecha_documento'] ?></td>
                         <?php if ($nivel_user == 1 || $nivel_user == 28): ?>
                             <td style="font-size: 14px;" class="text-center">
-                                <a href="edit_expediente_inmuebles.php?id=<?php echo (int)$detalle['id_rel_expedientes_inmuebles']; ?>&idbi=<?php echo $id_inmueble; ?>" class="btn btn-warning btn-md" title="Editar" data-toggle="tooltip" style="height: 30px; width: 30px;"><span class="material-symbols-rounded" style="font-size: 18px; color: black; margin-top: 1px; margin-left: -3px;">edit</span>
+                                <a href="edit_expediente_inmuebles.php?id=<?php echo (int)$detalle['id_rel_expedientes_inmuebles']; ?>&idbi=<?php echo $id_inmueble; ?>" class="btn btn-warning btn-md" title="Editar" data-toggle="tooltip" style="height: 27px; width: 27px;"><span class="material-symbols-rounded" style="font-size: 15px; color: black !important; margin-top: -2px; margin-left: -7px;">edit</span>
                                 </a>
-                                <a href="delete_expediente_inmuebles.php?id=<?php echo (int)$detalle['id_rel_expedientes_inmuebles']; ?>&idbi=<?php echo $id_inmueble; ?>" class=" btn btn-dark btn-md" title="Eliminar" data-toggle="tooltip" style="height: 30px; width: 30px;"><span class="material-symbols-rounded" style="font-size: 22px; color: white; margin-top: -1.5px; margin-left: -5px;">delete</span>
+                                <a href="delete_expediente_inmuebles.php?id=<?php echo (int)$detalle['id_rel_expedientes_inmuebles']; ?>&idbi=<?php echo $id_inmueble; ?>" class=" btn btn-dark btn-md" title="Eliminar" data-toggle="tooltip" style="height: 30px; width: 30px;"><span class="material-symbols-rounded" style="font-size: 22px; color: white; margin-top: -1px; margin-left: -5px;">delete</span>
                                 </a>
                             </td>
                         <?php endif; ?>

@@ -31,11 +31,18 @@ if (isset($_POST['add_subcategorias_inv'])) {
 
     $padre = remove_junk($db->escape($_POST['padre']));
     $descripcion = remove_junk($db->escape($_POST['descripcion']));
+    $resguardo = remove_junk($db->escape($_POST['resguardo']));
+
+    if (!$resguardo) {
+        $resguardo = 0;
+    } else {
+        $resguardo = 1;
+    }
 
     $query  = "INSERT INTO cat_categorias_inv (";
-    $query .= "padre, descripcion, nivel, estatus";
+    $query .= "padre, descripcion, nivel, resguardo, estatus";
     $query .= ") VALUES (";
-    $query .= " '{$padre}', '{$descripcion}', 2, 1";
+    $query .= " '{$padre}', '{$descripcion}', 2, {$resguardo}, 1";
     $query .= ")";
     if ($db->query($query)) {
         //sucess
@@ -77,10 +84,21 @@ if (isset($_POST['add_subcategorias_inv'])) {
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="resguardo">Visible para Resguardo</label><br><br>
+                    <select class="form-control" name="resguardo">
+                        <option value="">Escoge una opción</option>
+                        <option value="0">No</option>
+                        <option value="1">Sí</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="form-group clearfix">
-            <button type="submit" name="add_subcategorias_inv" class="btn btn-info" style="margin-top: -20%; margin-left: 42%;">Guardar</button>
-            <a href="subcategorias_inv.php" class="btn btn-md btn-success" data-toggle="tooltip" title="Regresar" style="margin-top: 30%; margin-left: -60%;">
+            <button type="submit" name="add_subcategorias_inv" class="btn btn-info" style="margin-top: -10%; margin-left: 42%;">Guardar</button>
+            <a href="subcategorias_inv.php" class="btn btn-md btn-success" data-toggle="tooltip" title="Regresar" style="margin-top: 10%; margin-left: -60%;">
                 Regresar
             </a>
         </div>

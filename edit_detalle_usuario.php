@@ -7,24 +7,25 @@ require_once('includes/load.php');
 $user = current_user();
 $nivel_user = $user['user_level'];
 
-if ($nivel_user == 1) {
-    page_require_level_exacto(1);
-}
-if ($nivel_user == 2) {
-    page_require_level_exacto(2);
+if ($nivel_user <= 2) {
+    page_require_level(2);
 }
 if ($nivel_user == 14) {
     page_require_level_exacto(14);
 }
+if ($nivel_user == 29) {
+    page_require_level_exacto(29);
+}
 if ($nivel_user > 2 && $nivel_user < 14) :
     redirect('home.php');
 endif;
-if ($nivel_user > 14) {
+if ($nivel_user > 14 && $nivel_user < 29) :
     redirect('home.php');
-}
-if (!$nivel_user) {
+endif;
+if ($nivel_user > 29) :
     redirect('home.php');
-}
+endif;
+
 ?>
 <?php
 $e_detalle = find_by_id('detalles_usuario', (int)$_GET['id'], 'id_det_usuario');
@@ -69,24 +70,24 @@ if (isset($_POST['update'])) {
                 id_cargo = {$cargo}, curp = '$curp', rfc = '{$rfc}', calle_num = '{$calle_num}', colonia = '{$colonia}', municipio = '{$municipio}', 
                 estado = '{$estado}', telefono = '{$telefono}' WHERE id_det_usuario = '{$db->escape($id)}'";
 
-        // if ($id_cat_grupo_vuln != '') {
-        // if ($id_cat_grupo_vuln > 0) {
+        
         $query = "DELETE FROM rel_detalle_gv WHERE id_detalle_usuario =" . $id;
         $db->query($query);
 
         for ($i = 0; $i < sizeof($id_cat_grupo_vuln); $i++) {
-            $query2 = "INSERT INTO rel_detalle_gv (";
-            $query2 .= "id_detalle_usuario, id_cat_grupo_vuln, fecha_creacion";
-            $query2 .= ") VALUES (";
-            $query2 .= " {$id}, '{$id_cat_grupo_vuln[$i]}', NOW())";
-            if ($db->query($query2)) {
-                $cambios = true;
-            } else {
-                $cambios = false;
-            }
+			if($id_cat_grupo_vuln[$i] != '' || $id_cat_grupo_vuln[$i] == '0'){
+				$query2 = "INSERT INTO rel_detalle_gv (";
+				$query2 .= "id_detalle_usuario, id_cat_grupo_vuln, fecha_creacion";
+				$query2 .= ") VALUES (";
+				$query2 .= " {$id}, '{$id_cat_grupo_vuln[$i]}', NOW())";
+				if ($db->query($query2)) {
+					$cambios = true;
+				} else {
+					$cambios = false;
+				}
+			}
         }
-        // }
-        // }
+        
 
         $result = $db->query($sql);
 
@@ -138,7 +139,7 @@ if (isset($_POST['update'])) {
 
 <?php include_once('layouts/header.php'); ?>
 <div class="row">
-    <!-- <div class="col-md-12"> <?php echo display_msg($msg); ?> </div> -->
+     <div class="col-md-12"> <?php echo display_msg($msg); ?> </div> 
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -246,12 +247,17 @@ if (isset($_POST['update'])) {
                             </div>
                         </div>
                     </div>
+					<div class="row" id="inputFormRow">
+                            <div class="col-md-4">
+                                <label for="id_cat_grupo_vuln">¿Pertenece a algún Grupo Vulnerable?</label>
+                                
+                            </div>
+                    </div>
                     <?php
                     $num = 0;
                     foreach ($rel_detalle_grupo_vuln as $dgv) : ?>
                         <div class="row" id="inputFormRow">
-                            <div class="col-md-4">
-                                <label for="id_cat_grupo_vuln">¿Pertenece a algún Grupo Vulnerable?</label>
+                            <div class="col-md-4">                                
                                 <select class="form-control" name="id_cat_grupo_vuln[]">
                                     <option value="">Seleccione el Derecho Violentado</option>
                                     <?php foreach ($grupos_vuln as $gv) : ?>
@@ -289,7 +295,7 @@ if (isset($_POST['update'])) {
                         <div class="row" id="inputFormRow">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="id_cat_grupo_vuln">¿Pertenece a algún Grupo Vulnerable?</label>
+                                    
                                     <select class="form-control" name="id_cat_grupo_vuln[]">
                                         <option value="">Seleccione el Derecho Violentado</option>
                                         <?php foreach ($grupos_vuln as $gv) : ?>
